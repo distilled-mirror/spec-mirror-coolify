@@ -1,0 +1,336 @@
+# Docs
+
+- [Coolify](/): Coolify is an open-source Platform as a Service (PaaS) for self-hosting databases, services, and applications with free SSL, backups, and Git integration.
+- Get Started
+
+  - **Setup**
+  - [Introduction](/get-started/introduction): Coolify is an open-source self-hosted PaaS alternative to Vercel, Heroku, and Railway with unlimited deployments, no vendor lock-in, and free SSL.
+  - [Installation](/get-started/installation): Install Coolify self-hosted PaaS on Linux servers with automated Docker setup script, manual configuration, SSH access, and firewall setup.
+  - [Upgrading](/get-started/upgrade): Upgrade self-hosted Coolify automatically, semi-automatically with UI notifications, or manually via terminal with version-specific installation.
+  - [Upgrading (internal Postgresql)](/get-started/internal-postgresql-upgrade): Upgrade or roll back the PostgreSQL database used by your self-hosted Coolify instance.
+  - [Downgrading](/get-started/downgrade): Downgrade self-hosted Coolify to previous versions by disabling auto-update, using SSH terminal commands, and handling database compatibility risks.
+  - [Uninstalling](/get-started/uninstallation): Completely remove Coolify from your self-hosted server by stopping containers, deleting volumes, networks, data directories, and Docker images.
+  - [Coolify Cloud](/get-started/cloud): Coolify Cloud is a fully managed PaaS service with zero maintenance, automatic scaling, daily backups, and email notifications.
+
+  - **Learn**
+  - [Usage](/get-started/usage): Compare Coolify Cloud managed service starting at $5/month versus free self-hosted deployment with maintenance, support, and backup differences.
+  - [Concepts](/get-started/concepts): Learn core Coolify concepts including servers, resources, environments, projects, Docker containers, reverse proxy, and team management basics.
+  - [UI Screenshots](/get-started/screenshots): View screenshots of Coolify's user interface showing dashboard, deployment options, server management, and application configuration features.
+  - [Tutorial videos](/get-started/videos): Watch community video tutorials on Coolify self-hosted PaaS including installation, deployment, and complete walkthroughs for beginners.
+
+  - **Community**
+  - [coolLabs Team](/get-started/team): Meet the international team developing Coolify including founder Andras Bacsai, core developers, community leads, and documentation maintainers.
+  - [Support](/get-started/support): Get Coolify support through Discord community with 19K+ members, direct email support for Cloud users, and core team developer assistance.
+  - [Coolify Sponsors](/get-started/sponsors): Meet the companies and organizations sponsoring Coolify development including hosting, infrastructure, and developer-tool partners.
+  - Contribute
+    - [Contributing to Core](/get-started/contribute/coolify): Contribute to Coolify open-source development with step-by-step setup guide, Docker environment, Spin commands, and pull request workflow.
+    - [Add a new service template to Coolify](/get-started/contribute/service): Add new service templates to Coolify using Docker Compose with magic environment variables, storage handling, and one-click deployment features.
+    - [Contributing to Documentation](/get-started/contribute/documentation): Contribute to Coolify docs with this guide covering repository setup, local development with Bun, image guidelines, and pull request workflow.
+- Applications
+  - [Applications](/applications): Deploy web applications on Coolify with Nixpacks, Docker, static sites, build packs, environment variables, and automated deployments.
+
+  - **Frameworks**
+  - [Django](/applications/django): Deploy Django applications on Coolify with gunicorn, automatic builds, environment variables, and Python package management.
+  - [Jekyll](/applications/jekyll): Deploy Jekyll static sites on Coolify using Nixpacks or Dockerfile with Ruby, Nginx, and automated build processes.
+  - [Laravel](/applications/laravel): Deploy Laravel PHP applications on Coolify with Nixpacks, queue workers, scheduler, supervisor, database, and Redis integration.
+  - [Phoenix](/applications/phoenix): Deploy Phoenix framework applications on Coolify with Elixir/Erlang, Nixpacks, environment variables, and database integration.
+  - [Ruby on Rails](/applications/rails): Deploy Ruby on Rails applications on Coolify with database migrations, MVC pattern support, and automated deployment workflows.
+  - [Symfony](/applications/symfony): Deploy Symfony PHP applications on Coolify with Nixpacks, Doctrine migrations, database connections, and trusted proxy configuration.
+  - [NextJS](/applications/nextjs): Deploy Next.js applications on Coolify with server-side rendering, static builds, Nixpacks, or custom Dockerfile configurations.
+  - [Vite](/applications/vite): Deploy Vite applications on Coolify with TypeScript or JavaScript, Nixpacks build process, and static site generation.
+  - [Vue](/applications/vuejs): Deploy Vue.js applications on Coolify with server builds using Node/Express or static SPA builds with routing support.
+  - [Nuxt](/applications/nuxt): Deploy Nuxt applications on Coolify with server builds, static generation, and Nitro support using Nixpacks build configurations.
+  - [SvelteKit](/applications/svelte-kit): Deploy SvelteKit applications on Coolify with static builds using adapter-static or Node server builds with adapter-node.
+  - Build Packs
+    - [Build Packs](/applications/build-packs): Choose from Nixpacks, Static, Dockerfile, or Docker Compose build packs to create optimized Docker images for your application deployments.
+    - [Static Build Packs](/applications/build-packs/static): Deploy static websites with Nginx web server using pre-built files from Git repositories, supporting Astro, Webstudio, and other static generators.
+    - Nixpacks Build Pack
+      - [Nixpacks Build Pack](/applications/build-packs/nixpacks): Build applications with Nixpacks automatic buildpack detecting your codebase, generating Dockerfiles, and deploying static sites or dynamic apps.
+      - [Node.js Versioning](/applications/build-packs/nixpacks/node-versioning): How to pin specific Node.js minor and patch versions in Nixpacks using nixpkgs archive overrides.
+    - [Railpack Build Pack](/applications/build-packs/railpack): Build applications with Railpack — the successor to Nixpacks — automatically detecting your codebase, building optimized images, and deploying static sites or dynamic apps.
+    - [Dockerfile Build Pack](/applications/build-packs/dockerfile): Build Docker images from your custom Dockerfile with Coolify supporting Git repositories, environment variables, and pre/post-deployment commands.
+    - [Docker Compose Build Packs](/applications/build-packs/docker-compose): Deploy multi-container applications with Docker Compose using custom domains, magic environment variables, storage volumes, and service networking.
+  - CI/CD
+    - [CI/CD with Git Providers](/applications/ci-cd): Learn how Coolify applications integrate with Git providers for continuous deployment. Understand the difference between Git-based applications and Docker Compose services.
+    - Github
+      - [Overview](/applications/ci-cd/github/overview): Integrate GitHub with Coolify to deploy applications from repositories, enable automatic deployments, and manage pull requests seamlessly.
+      - [GitHub Actions](/applications/ci-cd/github/actions): Deploy applications using GitHub Actions to build Docker images and trigger redeployments in Coolify.
+      - [GitHub Auto Deploy](/applications/ci-cd/github/auto-deploy): Automatically deploy applications from GitHub repositories in Coolify using GitHub Apps, Actions, or webhooks.
+      - [GitHub Preview Deploy](/applications/ci-cd/github/preview-deploy): Automatically deploy preview versions of your application for each GitHub pull request using Coolify.
+      - [Deploy Public Repository](/applications/ci-cd/github/public-repository): Learn how to deploy applications from public GitHub repositories directly using the repository URL in Coolify.
+      - [GitHub Deploy Key](/applications/ci-cd/github/deploy-key): Deploy applications from private GitHub repositories using deploy keys in Coolify.
+      - [Setup GitHub App](/applications/ci-cd/github/setup-app): Set up a GitHub App in Coolify to access and deploy from private GitHub repositories using automated or manual installation methods.
+      - [Switch GitHub Apps](/applications/ci-cd/github/switch-apps): Learn how to switch your application from one GitHub App to another in Coolify, such as when moving repositories to a new organization.
+    - Gitlab
+      - [Integration](/applications/ci-cd/gitlab/integration): Connect GitLab repositories to Coolify with deploy keys, Gitlab container registry with deploy token, automatic webhooks, and merge request deployments for CI/CD automation
+    - Bitbucket
+      - [Integration](/applications/ci-cd/bitbucket/integration): Deploy Bitbucket repositories with Coolify using deploy keys, SSH authentication, and automated webhooks for commits and pull requests.
+    - Gitea
+      - [Integration](/applications/ci-cd/gitea/integration): Deploy Gitea repositories with Coolify using deploy keys, SSH authentication, and automated webhooks for commits and pull requests.
+    - [Other Git Providers](/applications/ci-cd/other-providers): Connect any Git provider to Coolify using deploy keys and webhooks for automatic deployments. Works with Gogs, Forgejo, and custom Git servers.
+- Services
+  - [Services](/services/introduction)
+  - [Overview](/services/overview): Browse the complete directory of one-click services available in Coolify, including databases, development tools, and productivity apps.
+  - [All Services](/services/all): Complete directory of one-click services in Coolify including AI, analytics, databases, CMS, monitoring, and more.
+- Databases
+  - [Introduction](/databases): Deploy databases on Coolify with one-click setup for PostgreSQL, MySQL, MariaDB, MongoDB, Redis, KeyDB, DragonFly, and ClickHouse.
+  - [Database SSL](/databases/ssl): Secure database connections on Coolify with SSL encryption, automatic certificate generation, and multiple SSL modes for enhanced security.
+  - [Backups](/databases/backups): Configure scheduled database backups for PostgreSQL, MySQL, MariaDB, and MongoDB with cron expressions and S3 storage integration.
+  - [MySQL](/databases/mysql): Deploy MySQL databases on Coolify with ACID compliance, replication, partitioning, full-text indexing, and automated backup features.
+  - [MariaDB](/databases/mariadb): Deploy MariaDB databases on Coolify with MySQL compatibility, enhanced performance, additional storage engines, and automated backups.
+  - [PostgreSQL](/databases/postgresql): Deploy PostgreSQL databases on Coolify with advanced features, automated backups, import/restore capabilities, and 30+ years of reliability.
+  - [MongoDB](/databases/mongodb): Deploy MongoDB NoSQL databases on Coolify with flexible document storage, horizontal scalability, and automated backup solutions.
+  - [Redis](/databases/redis): Deploy Redis in-memory databases on Coolify with caching, vector database, document storage, streaming, and message broker capabilities.
+  - [DragonFly](/databases/dragonfly): Deploy DragonFly in-memory datastore on Coolify with Redis compatibility, multi-threaded architecture, and enhanced scalability features.
+  - [KeyDB](/databases/keydb): Deploy KeyDB on Coolify with high-performance multithreading, Redis compatibility, active replication, and FLASH storage support.
+  - [ClickHouse](/databases/clickhouse): Deploy ClickHouse on Coolify with column-oriented OLAP database, real-time analytics, S3 backups, and exceptional query performance.
+- Integrations
+  - Cloudflare
+    - Tunnels
+      - [Cloudflare Tunnels](/integrations/cloudflare/tunnels): Connect Coolify resources securely without port forwarding using Cloudflare Tunnels for all resources, single apps, SSH access, or full HTTPS setups.
+      - [Access All Resource via Cloudflare Tunnels](/integrations/cloudflare/tunnels/all-resource): Expose all Coolify resources securely through Cloudflare Tunnels without public IPs or port forwarding using wildcard domains and HTTP proxy routing.
+      - [Access Single Resource via Cloudflare Tunnels](/integrations/cloudflare/tunnels/single-resource): Securely access individual Coolify applications through Cloudflare Tunnels with port mapping, domain configuration, and multi-resource tunneling support.
+      - [Server SSH Access via Cloudflare Tunnels](/integrations/cloudflare/tunnels/server-ssh): Enable secure SSH access to Coolify servers via Cloudflare Tunnels with automated or manual cloudflared installation hiding server IP addresses.
+      - [Full HTTPS/TLS Setup for All Resources](/integrations/cloudflare/tunnels/full-tls): Configure end-to-end HTTPS for Coolify resources through Cloudflare Tunnels with Origin Certificates, strict TLS encryption, and proper domain setup.
+    - [Cloudflare DDoS Protection](/integrations/cloudflare/ddos-protection): Learn how to set up Cloudflare DDoS protection for applications deployed with Coolify.
+  - [MCP Server](/integrations/mcp): Connect AI assistants like Claude Desktop and Cursor to your Coolify instance using the Model Context Protocol (MCP) for read-only infrastructure visibility.
+  - [Crowdsec](https://www.crowdsec.net/blog/securing-automated-app-deployment-crowdsec-and-coolify)
+- [Hetzner Promo Code](/hetzner): Redeem the Coolify Hetzner promo code for account credit on your next invoices.
+- Knowledge Base
+  - [Overview](/knowledge-base): Comprehensive Coolify knowledge base covering deployment guides, server setup, Git integration, proxy configuration, and troubleshooting resources.
+  - Internal
+    - [Scalability](/knowledge-base/internal/scalability): Scale Coolify applications with traditional horizontal scaling across multiple servers using load balancers or Docker Swarm for high availability deployments.
+    - [Terminal](/knowledge-base/internal/terminal): Access Coolify resources through built-in web terminal with xterm.js, secure SSH connections, and Websocket communication for all containers and servers.
+
+  - **Self-hosted Instance**
+  - [Monitoring](/knowledge-base/monitoring): Monitor Coolify resources with built-in disk usage tracking, automatic cleanup, container status monitoring, and backup status notifications.
+  - [Notifications](/knowledge-base/notifications): Configure multi-channel notifications in Coolify with Email, Telegram, Discord, Slack, Mattermost, Pushover, and Webhooks for deployments, backups, and server monitoring alerts.
+  - [Webhook Payloads](/knowledge-base/webhook-payloads): Reference for all Coolify webhook notification payloads, including application deployments, database backups, scheduled tasks, Docker cleanup, server events, and container events.
+  - [Coolify Instance Updates - Self-hosted](/knowledge-base/self-update): Configure automatic Coolify updates with custom cron schedules, manual update options, and service template synchronization for self-hosted instances.
+  - [Commands](/knowledge-base/commands): Essential Coolify CLI commands for root password reset, email changes, and deleting stuck services via Docker exec and Artisan commands.
+  - [Delete User](/knowledge-base/delete-user): Safely delete users from Coolify with automatic team ownership transfer, resource cleanup, and team member reassignment procedures.
+  - [OAuth](/knowledge-base/oauth): Set up OAuth authentication with GitHub, GitLab, Google, Azure, or Bitbucket for secure single sign-on access to your Coolify instance.
+  - [Create Root User with Environment Variables](/knowledge-base/create-root-user-with-env): Create Coolify root user during installation with environment variables including email validation, username requirements, and strong password policies.
+  - [Define Custom Docker Network with Environment Variables](/knowledge-base/define-custom-docker-network-with-env): Configure custom Docker network CIDR blocks and address pools using environment variables during Coolify installation for advanced network setups
+  - [Custom Docker Registry](/knowledge-base/custom-docker-registry): Switch between Docker Hub and GitHub Container Registry (ghcr.io) for pulling Coolify images during installation or runtime
+  - [Custom Compose Overrides](/knowledge-base/custom-compose-overrides): Customize Coolify's infrastructure containers using a docker-compose.custom.yml file that persists across upgrades
+  - [Change Localhost Key](/knowledge-base/change-localhost-key): Replace and regenerate Coolify's localhost SSH private key with safe database backup procedures and Docker container key installation.
+
+  - **DNS & Domains**
+  - [DNS Configuration](/knowledge-base/dns-configuration): Configure A records, wildcard domains, and autogenerated subdomains for Coolify applications with DNS setup examples and preview deployments.
+  - [Domains](/knowledge-base/domains): Add custom domains to Coolify with FQDN format, multiple domain support, port mapping, path-based routing, wildcard domains, and custom DNS server validation.
+
+  - **Destinations**
+  - [Introduction](/knowledge-base/destinations): Manage Docker network destinations in Coolify for isolated deployment environments supporting standalone Docker and Swarm cluster configurations.
+  - [Creating Destinations](/knowledge-base/destinations/create): Create Docker network destinations in Coolify for standalone or Swarm deployments with automatic proxy configuration and network scanning.
+  - [Managing Destinations](/knowledge-base/destinations/manage): Manage Coolify destinations including editing, deleting, resource assignment, and connecting service stacks to predefined Docker networks.
+
+  - **Resources**
+  - [Environment Variables](/knowledge-base/environment-variables): Manage build-time and runtime environment variables in Coolify with team, project, and environment-based shared variables plus predefined system values.
+  - [Persistent Storage](/knowledge-base/persistent-storage): Configure persistent Docker volumes and bind mounts for Coolify resources to preserve data between deployments with proper path mapping and sharing options.
+  - [Drain Logs](/knowledge-base/drain-logs): Stream Coolify application logs to Axiom, New Relic, or custom FluentBit destinations for centralized monitoring and log analysis.
+  - [Rolling updates](/knowledge-base/rolling-updates): Deploy zero-downtime application updates with Coolify rolling updates using health checks, default container naming, and graceful container transitions.
+  - [Health checks](/knowledge-base/health-checks): Configure application health checks in Coolify with Dockerfile or UI settings for Traefik routing, rolling updates, and troubleshooting 404 errors.
+  - [Node.js Multi-Core Scaling](/knowledge-base/nodejs-multi-core-scaling): Scale a Node.js, Bun, or Deno application across all available CPU cores using PM2 cluster mode or SO_REUSEPORT, with Dockerfile and Nixpacks examples for Coolify.
+  - [Supported Cron Syntax](/knowledge-base/cron-syntax): Complete cron syntax reference for Coolify scheduled tasks including standard format and predefined schedules like hourly, daily, and weekly.
+  - How-Tos
+    - [Migrate Applications](/knowledge-base/how-to/migrate-apps-different-host): Step-by-step guide to migrate applications, databases, and Docker volumes from one Coolify server to another with backup and restore scripts
+    - [Backup and Restore Coolify](/knowledge-base/how-to/backup-restore-coolify): Backup and restore your Coolify instance with S3 or manual methods including database migration, SSH key transfer, and APP_KEY configuration.
+    - [Load Balancing on Hetzner](/knowledge-base/how-to/hetzner-loadbalancing): Deploy scalable load-balanced applications on Hetzner Cloud with Coolify including TLS termination, health checks, database setup, and firewall configuration.
+    - [Using WordPress Multisite with Coolify](/knowledge-base/how-to/wordpress-multisite): Configure WordPress Multisite in Coolify with subdomain or subdirectory setup, persistent storage, and network configuration
+    - [Raspberry Pi OS Setup Guide](/knowledge-base/how-to/raspberry-pi-os): Install Coolify on Raspberry Pi with 64-bit OS setup guide covering Pi Zero 2 W, Pi 3, 4, and 5 models with SSH configuration.
+    - [macOS using Colima Setup Guide](/knowledge-base/how-to/macos-colima): Install Coolify on macOS using a Colima virtual machine with Docker, covering VM creation, networking, and SSH configuration.
+    - [Private NPM Registry](/knowledge-base/how-to/private-npm-registry): Use private NPM registries with Coolify deployments by configuring .npmrc authentication tokens and build environment variables.
+    - [Ollama with GPU](/knowledge-base/how-to/ollama-with-gpu): Self-host Ollama LLM with NVIDIA GPU acceleration on Coolify including hardware requirements, Docker configuration, and model management setup.
+    - [Deploy Webstudio Projects to Hetzner with Coolify](/knowledge-base/how-to/webstudio-with-hetzner): Complete guide to deploying Webstudio projects with Coolify on Hetzner servers using Docker, GitHub integration, and automated deployment.
+  - Servers
+    - [Introduction](/knowledge-base/server/introduction): Connect localhost and remote Linux servers to Coolify with SSH authentication, Docker Engine, wildcard domains, and Traefik proxy setup.
+    - [Automated Docker Cleanup](/knowledge-base/server/automated-cleanup): Prevent disk space issues with Coolify's automated Docker cleanup removing stopped containers, unused images, build cache, and volumes on schedule or threshold.
+    - [Build Server](/knowledge-base/server/build-server): Set up a build server in Coolify to separate your build process from deployment, reduce load, and improve performance.
+    - [Firewall](/knowledge-base/server/firewall): Configure firewall ports for Coolify including SSH, HTTP/HTTPS, dashboard access, and terminal with ufw-docker setup for self-hosted and cloud instances.
+    - [Multiple Servers](/knowledge-base/server/multiple-servers): Deploy applications across multiple servers with Coolify for high availability using Docker Registry, load balancers, and synchronized deployments.
+    - [Sentinel and Metrics](/knowledge-base/server/sentinel): Monitor server and container CPU and RAM usage with Coolify's lightweight Sentinel container providing Linux API and resource metrics collection.
+    - [Non-root user](/knowledge-base/server/non-root-user): Configure Coolify servers with non-root users using SSH keys and passwordless sudo permissions for secure resource management.
+    - [OpenSSH](/knowledge-base/server/openssh): Configure OpenSSH server for Coolify with key-based authentication, proper permissions, and automated SSH setup across Ubuntu, Debian, CentOS, and Alpine Linux.
+    - [Oracle Cloud](/knowledge-base/server/oracle-cloud): Configure Oracle Cloud free ARM servers with Coolify including root user setup, SSH configuration, firewall rules, and non-root user permissions.
+    - [Supported Proxy](/knowledge-base/server/proxies): Learn about Traefik and Caddy reverse proxy support in Coolify for routing traffic, SSL certificates, and load balancing with switching guide
+    - [Server Patching](/knowledge-base/server/patching): Update server packages from Coolify dashboard with APT, DNF, and Zypper support including individual or batch updates and weekly notifications.
+    - [Terminal Access](/knowledge-base/server/terminal-access): Manage terminal access for servers and containers in Coolify with admin-level controls and security permissions.
+  - S3
+    - [Introduction](/knowledge-base/s3/introduction): Configure S3-compatible storage for Coolify backups including AWS, DigitalOcean Spaces, MinIO, Cloudflare R2, Supabase Storage, Backblaze B2, and Scaleway Object Storage.
+    - [Aws S3 Backup Setup](/knowledge-base/s3/aws): Set up automated Coolify backups with AWS S3 including IAM policy creation, bucket configuration, access key setup, and cost-effective lifecycle rules.
+    - [Cloudflare R2](/knowledge-base/s3/r2): Configure Cloudflare R2 S3-compatible storage for Coolify backups with bucket creation, API token setup, and access credentials configuration.
+    - [Supabase Storage](/knowledge-base/s3/supabase): Configure Supabase Storage as an S3-compatible backup destination for Coolify using your project endpoint, bucket, region, and access keys.
+  - Docker
+    - [Docker Compose](/knowledge-base/docker/compose): Deploy multi-container Docker Compose stacks in Coolify with magic environment variables, persistent storage, healthchecks, and predefined network connections.
+    - [Custom Commands](/knowledge-base/docker/custom-commands): Add custom Docker run options to Coolify deployments including custom entrypoints, GPU support, security options, system controls, devices, and resource limits.
+    - [Docker Registry](/knowledge-base/docker/registry): Push built Docker images to any registry with Coolify including custom tags, authentication setup, Swarm mode support, and self-hosted registry configuration.
+    - [Docker Swarm](/knowledge-base/docker/swarm): Deploy Coolify resources across Docker Swarm clusters with external registry requirements, manager and worker setup, and persistent storage configuration.
+  - Proxy
+    - Traefik
+      - [Traefik Overview](/knowledge-base/proxy/traefik): Configure Traefik reverse proxy in Coolify with dynamic routing, SSL management, load balancing, and dashboard monitoring for containerized applications.
+      - [Basic Auth Middleware](/knowledge-base/proxy/traefik/basic-auth): Protect Coolify applications and services with Traefik basic authentication middleware using htpasswd credentials for standard and Docker Compose deployments.
+      - [Custom SSL Certificates](/knowledge-base/proxy/traefik/custom-ssl-certs): Use custom SSL certificates with Traefik proxy in Coolify including self-signed certificates, Let's Encrypt, and public CA certificates configuration.
+      - [Enable Dashboard](/knowledge-base/proxy/traefik/dashboard): Enable and secure Traefik dashboard in Coolify with basic authentication, dynamic configuration, Let's Encrypt SSL, and custom domain access.
+      - Custom Middlewares
+        - [Custom Middlewares](/knowledge-base/proxy/traefik/custom-middlewares): Apply custom Traefik middlewares to Coolify applications and Docker Compose services for rate limiting, IP whitelisting, custom headers, and more.
+        - [Redirects](/knowledge-base/proxy/traefik/custom-middlewares/redirects): Configure Traefik URL redirects in Coolify including www to non-www, domain forwarding, and HTTPS redirections for applications and services.
+      - [Dynamic Configurations](/knowledge-base/proxy/traefik/dynamic-config): Configure Traefik proxy on the fly without restarts using Coolify's dynamic configuration system for real-time middleware and routing updates.
+      - [Load-balancing](/knowledge-base/proxy/traefik/load-balancing): Configure Traefik load balancing in Coolify across multiple servers or containers with dynamic configuration, HTTPS support, and health monitoring.
+      - [DNS Challenge](/knowledge-base/proxy/traefik/dns-challenge): Switch Traefik from HTTP challenge to DNS challenge for ACME (Let's Encrypt) certificates — required for wildcard certs or servers without a public port 80.
+      - [Wildcard SSL Certificates](/knowledge-base/proxy/traefik/wildcard-certs): Issue a single Let's Encrypt wildcard SSL certificate (*.example.com) with Traefik to cover every subdomain without per-resource certificate generation.
+      - [Authentik Forward Authentication Middleware](/knowledge-base/proxy/traefik/protect-services-with-authentik): Secure Coolify services with Authentik SSO forward authentication using Traefik middleware for proxy provider single sign-on protection.
+    - Caddy
+      - [Caddy Overview](/knowledge-base/proxy/caddy): Use Caddy reverse proxy with Coolify for automatic SSL certificates, simple configuration, and HTTP/2 support as an alternative to Traefik.
+      - [Caddy Basic Auth](/knowledge-base/proxy/caddy/basic-auth): Add password protection to Coolify applications with Caddy basic authentication using hash-password CLI for secure credential management.
+      - [DNS Challenge](/knowledge-base/proxy/caddy/dns-challenge): Switch Caddy from HTTP challenge to DNS challenge for ACME (Let's Encrypt) certificates — required for wildcard certs or servers without a public port 80.
+  - [FAQ](/knowledge-base/faq): Common Coolify questions answered including SSH permissions, custom ports, Cloudflare SSL, concurrent builds, and application port mapping troubleshooting.
+- API Reference
+  - [Authorization](/api-reference/authorization): Authenticate API requests to your Coolify instance using Bearer tokens with scoped permissions, team isolation, and rate limiting.
+  - Api
+    - Applications
+      - [Create (Docker Compose)](/api-reference/api/applications/create-dockercompose-application): Deprecated: Use POST /api/v1/services instead.
+      - [Create (Dockerfile without git)](/api-reference/api/applications/create-dockerfile-application): Create new application based on a simple Dockerfile (without git).
+      - [Create (Docker Image without git)](/api-reference/api/applications/create-dockerimage-application): Create new application based on a prebuilt docker image (without git).
+      - [Create Env](/api-reference/api/applications/create-env-by-application-uuid): Create env by application UUID.
+      - [Create (Private - Deploy Key)](/api-reference/api/applications/create-private-deploy-key-application): Create new application based on a private repository through a Deploy Key.
+      - [Create (Private - GH App)](/api-reference/api/applications/create-private-github-app-application): Create new application based on a private repository through a Github App.
+      - [Create (Public)](/api-reference/api/applications/create-public-application): Create new application based on a public git repository.
+      - [Delete](/api-reference/api/applications/delete-application-by-uuid): Delete application by UUID.
+      - [Delete Env](/api-reference/api/applications/delete-env-by-application-uuid): Delete env by UUID.
+      - [Get](/api-reference/api/applications/get-application-by-uuid): Get application by UUID.
+      - [Get application logs.](/api-reference/api/applications/get-application-logs-by-uuid): Get application logs by UUID.
+      - [List](/api-reference/api/applications/list-applications): List all applications.
+      - [List Envs](/api-reference/api/applications/list-envs-by-application-uuid): List all envs by application UUID.
+      - [Restart](/api-reference/api/applications/restart-application-by-uuid): Restart application. `Post` request is also accepted.
+      - [Start](/api-reference/api/applications/start-application-by-uuid): Start application. `Post` request is also accepted.
+      - [Stop](/api-reference/api/applications/stop-application-by-uuid): Stop application. `Post` request is also accepted.
+      - [Update](/api-reference/api/applications/update-application-by-uuid): Update application by UUID.
+      - [Update Env](/api-reference/api/applications/update-env-by-application-uuid): Update env by application UUID.
+      - [Update Envs (Bulk)](/api-reference/api/applications/update-envs-by-application-uuid): Update multiple envs by application UUID.
+    - Cloud tokens
+      - [Create Cloud Provider Token](/api-reference/api/cloud-tokens/create-cloud-token): Create a new cloud provider token. The token will be validated before being stored.
+      - [Delete Cloud Provider Token](/api-reference/api/cloud-tokens/delete-cloud-token-by-uuid): Delete cloud provider token by UUID. Cannot delete if token is used by any servers.
+      - [Get Cloud Provider Token](/api-reference/api/cloud-tokens/get-cloud-token-by-uuid): Get cloud provider token by UUID.
+      - [List Cloud Provider Tokens](/api-reference/api/cloud-tokens/list-cloud-tokens): List all cloud provider tokens for the authenticated team.
+      - [Update Cloud Provider Token](/api-reference/api/cloud-tokens/update-cloud-token-by-uuid): Update cloud provider token name.
+      - [Validate Cloud Provider Token](/api-reference/api/cloud-tokens/validate-cloud-token-by-uuid): Validate a cloud provider token against the provider API.
+    - Databases
+      - [Create Backup](/api-reference/api/databases/create-database-backup): Create a new scheduled backup configuration for a database
+      - [Create (Clickhouse)](/api-reference/api/databases/create-database-clickhouse): Create a new Clickhouse database.
+      - [Create (DragonFly)](/api-reference/api/databases/create-database-dragonfly): Create a new DragonFly database.
+      - [Create (KeyDB)](/api-reference/api/databases/create-database-keydb): Create a new KeyDB database.
+      - [Create (MariaDB)](/api-reference/api/databases/create-database-mariadb): Create a new MariaDB database.
+      - [Create (MongoDB)](/api-reference/api/databases/create-database-mongodb): Create a new MongoDB database.
+      - [Create (MySQL)](/api-reference/api/databases/create-database-mysql): Create a new MySQL database.
+      - [Create (PostgreSQL)](/api-reference/api/databases/create-database-postgresql): Create a new PostgreSQL database.
+      - [Create (Redis)](/api-reference/api/databases/create-database-redis): Create a new Redis database.
+      - [Delete backup configuration](/api-reference/api/databases/delete-backup-configuration-by-uuid): Deletes a backup configuration and all its executions.
+      - [Delete backup execution](/api-reference/api/databases/delete-backup-execution-by-uuid): Deletes a specific backup execution.
+      - [Delete](/api-reference/api/databases/delete-database-by-uuid): Delete database by UUID.
+      - [Database backups](/api-reference/api/databases/get-database-backups-by-uuid): Get backups details by database UUID.
+      - [Database](/api-reference/api/databases/get-database-by-uuid): Get database by UUID.
+      - [List backup executions](/api-reference/api/databases/list-backup-executions): Get all executions for a specific backup configuration.
+      - [List](/api-reference/api/databases/list-databases): List all databases.
+      - [Restart](/api-reference/api/databases/restart-database-by-uuid): Restart database. `Post` request is also accepted.
+      - [Start](/api-reference/api/databases/start-database-by-uuid): Start database. `Post` request is also accepted.
+      - [Stop](/api-reference/api/databases/stop-database-by-uuid): Stop database. `Post` request is also accepted.
+      - [Database backup](/api-reference/api/databases/update-database-backup): Update a specific backup configuration for a given database, identified by its UUID and the backup ID
+      - [Database](/api-reference/api/databases/update-database-by-uuid): Update database by UUID.
+    - Deployments
+      - [Cancel](/api-reference/api/deployments/cancel-deployment-by-uuid): Cancel a deployment by UUID.
+      - [Deploy](/api-reference/api/deployments/deploy-by-tag-or-uuid): Deploy by tag or uuid. `Post` request also accepted with `uuid` and `tag` json body.
+      - [Get](/api-reference/api/deployments/get-deployment-by-uuid): Get deployment by UUID.
+      - [List application deployments](/api-reference/api/deployments/list-deployments-by-app-uuid): List application deployments by using the app uuid
+      - [List](/api-reference/api/deployments/list-deployments): List currently running deployments
+    - Github apps
+      - [Create GitHub App](/api-reference/api/github-apps/create-github-app): Create a new GitHub app.
+      - [Delete GitHub App](/api-reference/api/github-apps/deleteGithubApp): Delete a GitHub app if it's not being used by any applications.
+      - [List](/api-reference/api/github-apps/list-github-apps): List all GitHub apps.
+      - [Load Branches for a GitHub Repository](/api-reference/api/github-apps/load-branches): Fetch branches from GitHub for a given repository.
+      - [Load Repositories for a GitHub App](/api-reference/api/github-apps/load-repositories): Fetch repositories from GitHub for a given GitHub app.
+      - [Update GitHub App](/api-reference/api/github-apps/updateGithubApp): Update an existing GitHub app.
+    - Hetzner
+      - [Create Hetzner Server](/api-reference/api/hetzner/create-hetzner-server): Create a new server on Hetzner and register it in Coolify.
+      - [Get Hetzner Images](/api-reference/api/hetzner/get-hetzner-images): Get all available Hetzner system images (operating systems).
+      - [Get Hetzner Locations](/api-reference/api/hetzner/get-hetzner-locations): Get all available Hetzner datacenter locations.
+      - [Get Hetzner Server Types](/api-reference/api/hetzner/get-hetzner-server-types): Get all available Hetzner server types (instance sizes).
+      - [Get Hetzner SSH Keys](/api-reference/api/hetzner/get-hetzner-ssh-keys): Get all SSH keys stored in the Hetzner account.
+    - Private keys
+      - [Create](/api-reference/api/private-keys/create-private-key): Create a new private key.
+      - [Delete](/api-reference/api/private-keys/delete-private-key-by-uuid): Delete a private key.
+      - [Get](/api-reference/api/private-keys/get-private-key-by-uuid): Get key by UUID.
+      - [List](/api-reference/api/private-keys/list-private-keys): List all private keys.
+      - [Update](/api-reference/api/private-keys/update-private-key): Update a private key.
+    - Projects
+      - [Create Environment](/api-reference/api/projects/create-environment): Create environment in project.
+      - [Create](/api-reference/api/projects/create-project): Create Project.
+      - [Delete Environment](/api-reference/api/projects/delete-environment): Delete environment by name or UUID. Environment must be empty.
+      - [Delete](/api-reference/api/projects/delete-project-by-uuid): Delete project by UUID.
+      - [Environment](/api-reference/api/projects/get-environment-by-name-or-uuid): Get environment by name or UUID.
+      - [List Environments](/api-reference/api/projects/get-environments): List all environments in a project.
+      - [Get](/api-reference/api/projects/get-project-by-uuid): Get project by UUID.
+      - [List](/api-reference/api/projects/list-projects): List projects.
+      - [Update](/api-reference/api/projects/update-project-by-uuid): Update Project.
+    - Resources
+      - [List](/api-reference/api/resources/list-resources): Get all resources.
+    - Servers
+      - [Create](/api-reference/api/servers/create-server): Create Server.
+      - [Delete](/api-reference/api/servers/delete-server-by-uuid): Delete server by UUID.
+      - [Domains](/api-reference/api/servers/get-domains-by-server-uuid): Get domains by server.
+      - [Resources](/api-reference/api/servers/get-resources-by-server-uuid): Get resources by server.
+      - [Get](/api-reference/api/servers/get-server-by-uuid): Get server by UUID.
+      - [List](/api-reference/api/servers/list-servers): List all servers.
+      - [Update](/api-reference/api/servers/update-server-by-uuid): Update Server.
+      - [Validate](/api-reference/api/servers/validate-server-by-uuid): Validate server by UUID.
+    - Services
+      - [Create Env](/api-reference/api/services/create-env-by-service-uuid): Create env by service UUID.
+      - [Create service](/api-reference/api/services/create-service): Create a one-click / custom service
+      - [Delete Env](/api-reference/api/services/delete-env-by-service-uuid): Delete env by UUID.
+      - [Delete](/api-reference/api/services/delete-service-by-uuid): Delete service by UUID.
+      - [Get](/api-reference/api/services/get-service-by-uuid): Get service by UUID.
+      - [List Envs](/api-reference/api/services/list-envs-by-service-uuid): List all envs by service UUID.
+      - [List](/api-reference/api/services/list-services): List all services.
+      - [Restart](/api-reference/api/services/restart-service-by-uuid): Restart service. `Post` request is also accepted.
+      - [Start](/api-reference/api/services/start-service-by-uuid): Start service. `Post` request is also accepted.
+      - [Stop](/api-reference/api/services/stop-service-by-uuid): Stop service. `Post` request is also accepted.
+      - [Update Env](/api-reference/api/services/update-env-by-service-uuid): Update env by service UUID.
+      - [Update Envs (Bulk)](/api-reference/api/services/update-envs-by-service-uuid): Update multiple envs by service UUID.
+      - [Update](/api-reference/api/services/update-service-by-uuid): Update service by UUID.
+    - System
+      - [Disable API](/api-reference/api/system/disable-api): Disable API (only with root permissions).
+      - [Enable API](/api-reference/api/system/enable-api): Enable API (only with root permissions).
+      - [Healthcheck](/api-reference/api/system/healthcheck): Healthcheck endpoint.
+      - [Version](/api-reference/api/system/version): Get Coolify version.
+    - Teams
+      - [Authenticated Team Members](/api-reference/api/teams/get-current-team-members): Get currently authenticated team members.
+      - [Authenticated Team](/api-reference/api/teams/get-current-team): Get currently authenticated team.
+      - [Members](/api-reference/api/teams/get-members-by-team-id): Get members by TeamId.
+      - [Get](/api-reference/api/teams/get-team-by-id): Get team by TeamId.
+      - [List](/api-reference/api/teams/list-teams): Get all teams.
+- Troubleshoot
+  - [Troubleshooting Overview](/troubleshoot): Comprehensive Coolify troubleshooting guides covering deployment errors, server issues, proxy problems, SSL certificates, and application configuration fixes.
+  - Installation
+    - [Coolify Install Script Failed](/troubleshoot/installation/install-script-failed): Debug and fix Coolify installation script failures with step-by-step troubleshooting for logs, Docker issues, port conflicts, and container problems.
+    - [Docker Installation Failed](/troubleshoot/installation/docker-install-failed): Fix Docker installation failures during Coolify setup by using Ubuntu LTS versions or manually installing Docker 24+ on non-LTS operating systems.
+  - Applications
+    - [Bad Gateway Error](/troubleshoot/applications/bad-gateway): Fix Bad Gateway (502) errors in Coolify by checking port configuration, host mapping, listening addresses, and container health.
+    - [No Available Server Error](/troubleshoot/applications/no-available-server): Fix No Available Server (503) errors in Coolify by diagnosing health checks, domain configuration, port mismatches, and Traefik proxy issues.
+    - [Gateway Timeout Errors](/troubleshoot/applications/gateway-timeout): Resolve Gateway Timeout (504) errors in Coolify by fixing network isolation, adjusting proxy timeouts for Traefik, Caddy, and Nginx.
+    - [Failed To Get Access Token During Deployment](/troubleshoot/applications/failed-to-get-token): Fix GitHub access token errors in Coolify deployments caused by NTP time synchronization issues affecting JWT 'iat' claim validation during authentication.
+  - Dashboard
+    - [Dashboard Inaccessible via Instance Domain](/troubleshoot/dashboard/dashboard-inaccessible): Fix Coolify dashboard access issues by checking proxy status, container health, firewall ports, and resolving domain configuration.
+    - [Slow Coolify Dashboard Performance](/troubleshoot/dashboard/dashboard-slow-performance): Resolve slow Coolify dashboard loading by disabling Cloudflare Rocket Loader, checking server location, and optimizing proxy settings for faster performance.
+    - [Disable 2FA Manually](/troubleshoot/dashboard/disable-2fa-manually): Manually disable two-factor authentication in Coolify using SSH, Docker exec, and Laravel Tinker commands when you've lost your 2FA device or codes.
+  - Docker
+    - [Expired GitHub Personal Access Token (PAT)](/troubleshoot/docker/expired-github-personal-access-token): Fix GitHub Container Registry authentication errors by logging out of ghcr.io or renewing expired GitHub Personal Access Tokens for Docker deployments.
+  - Server
+    - [Connection Unstable](/troubleshoot/server/connection-issues): Fix unstable Coolify server connections by removing UFW LIMIT rules, adjusting iptables, and configuring firewall settings for port 22 SSH access.
+    - [Server Crash During Build](/troubleshoot/server/crash-during-build): Fix server crashes during Coolify builds by offloading to external build servers, using GitHub Actions, or upgrading server resources for Docker image builds.
+    - [2FA Stopped Working](/troubleshoot/server/two-factor-stopped-working): Fix two-factor authentication failures in Coolify by synchronizing server time with NTP, checking systemd-timesyncd, and configuring firewall port 123 access.
+    - [Raspberry Pi Crashes](/troubleshoot/server/raspberry-crashes): Fix Raspberry Pi crashes on Coolify by upgrading to 4GB+ RAM or limiting Docker memory usage on 2GB models with slow SD card configurations.
+    - [Server Validation Issues](/troubleshoot/server/validation-issues): Resolve Coolify server validation errors by verifying SSH private key format includes BEGIN and END OPENSSH PRIVATE KEY headers to fix libcrypto errors.
+  - DNS & Domains
+    - [Coolify not using Wildcard SSL Certificates](/troubleshoot/dns-and-domains/wildcard-ssl-certs): Fix wildcard SSL certificate issues in Coolify by verifying installation, checking proxy configuration, and clearing browser cache.
+    - [Let's Encrypt Not Generating SSL Certificates on Coolify](/troubleshoot/dns-and-domains/lets-encrypt-not-working): Fix Let's Encrypt SSL failures by opening ports 80/443, checking DNS records, verifying Cloudflare settings, and troubleshooting challenges.
+    - [Certificate Resolver Not Found on Coolify Proxy](/troubleshoot/dns-and-domains/certificate-resolver-doesnt-exist): Fix Traefik 'letsencrypt cert resolver not found' errors by setting correct acme.json file permissions using chmod 600 for non-root Coolify users.

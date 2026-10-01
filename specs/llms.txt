@@ -16,6 +16,7 @@
 - [Offers](/offers): Offers, credits, and partner resources for Coolify users.
 - [Support](/support): Find the right place to ask for Coolify help and what to include so people can help faster.
 - [Team](/team): Meet the international team developing Coolify including founder Andras Bacsai, core developers, community leads, and documentation maintainers.
+- [Videos](/videos): Watch community video tutorials on Coolify self-hosted PaaS including installation, deployment, and complete walkthroughs for beginners.
 
 - **Contribute**
 - [Guidelines](/contribute/guidelines)
@@ -35,11 +36,11 @@
 
   - **Manage Coolify**
   - Instance Management
-    - [Instance settings](/core/instance-management/instance-settings): Configure self-hosted Coolify instance settings for URL, access, updates, backups, email, OAuth, and scheduled jobs.
+    - [Instance settings](/core/instance-management/instance-settings): Configure self-hosted Coolify instance settings for URL, access, updates, backups, email, authentication, and scheduled jobs.
     - [Update Coolify](/core/instance-management/update): Update a self-hosted Coolify instance from the dashboard or terminal, and configure automatic updates.
     - [Update Coolify Database](/core/instance-management/update-coolify-database): Update or roll back the internal PostgreSQL database used by a self-hosted Coolify instance.
     - [Downgrade Coolify](/core/instance-management/downgrade): Return a self-hosted Coolify instance to an earlier release from the terminal, with backup and recovery safeguards.
-    - [Uninstall Coolify](/core/instance-management/uninstallation): Permanently remove a self-hosted Coolify control plane and its local data from a server.
+    - [Uninstall Coolify](/core/instance-management/uninstallation): Remove a self-hosted Coolify instance or Coolify Cloud services from connected servers.
   - Backup and Recovery
     - [Back up Coolify](/core/backup-and-recovery/instance-backup): Create and verify self-hosted Coolify instance backups, save the instance encryption key, and configure recurring backups.
     - [Restore Coolify](/core/backup-and-recovery/instance-restore): Restore a self-hosted Coolify instance on the same machine or move it to a replacement machine.
@@ -719,7 +720,8 @@
     - [Delete Storage](/api/endpoints/applications/delete-storage-by-application-uuid): Delete a persistent storage or file storage by application UUID.
     - [Delete Tag](/api/endpoints/applications/delete-tag-by-application-uuid): Remove a tag from an application by UUID.
     - [Get](/api/endpoints/applications/get-application-by-uuid): Get application by UUID.
-    - [Get application logs.](/api/endpoints/applications/get-application-logs-by-uuid): Get application logs by UUID.
+    - [Get application logs.](/api/endpoints/applications/get-application-logs-by-uuid): Get application logs by UUID. Requires the `read:sensitive` or `root` token ability.
+    - [Get preview application logs.](/api/endpoints/applications/get-preview-application-logs-by-pull-request-id): Get runtime container logs for a preview deployment by application UUID and pull request ID. Requires the `read:sensitive` or `root` token ability.
     - [List Destinations](/api/endpoints/applications/list-application-destinations): List primary and additional destinations for a standalone application.
     - [List Rollback Images](/api/endpoints/applications/list-application-rollback-images): List available Docker images for rolling back an application. Returns an empty list when the server is unavailable or remote inspection is not possible.
     - [List](/api/endpoints/applications/list-applications): List all applications.
@@ -738,6 +740,7 @@
     - [Update](/api/endpoints/applications/update-application-by-uuid): Update application by UUID.
     - [Update Env](/api/endpoints/applications/update-env-by-application-uuid): Update env by application UUID.
     - [Update Envs (Bulk)](/api/endpoints/applications/update-envs-by-application-uuid): Update multiple envs by application UUID.
+    - [Update Preview Domains](/api/endpoints/applications/update-preview-domains-by-pull-request-id): Replace domains for a preview deployment. Use domains for regular applications or docker_compose_domains for Docker Compose applications. Ports are stored as internal overrides while public domains remain portless.
     - [Update Storage](/api/endpoints/applications/update-storage-by-application-uuid): Update a persistent storage or file storage by application UUID.
   - Cloud init scripts
     - [Create Cloud-init Script](/api/endpoints/cloud-init-scripts/create-cloud-init-script): Create a new cloud-init script for the authenticated team.
@@ -757,12 +760,14 @@
     - [Create Backup](/api/endpoints/databases/create-database-backup): Create a new scheduled backup configuration for a database
     - [Create (Clickhouse)](/api/endpoints/databases/create-database-clickhouse): Create a new Clickhouse database.
     - [Create (DragonFly)](/api/endpoints/databases/create-database-dragonfly): Create a new DragonFly database.
+    - [Import database backup](/api/endpoints/databases/create-database-import)
     - [Create (KeyDB)](/api/endpoints/databases/create-database-keydb): Create a new KeyDB database.
     - [Create (MariaDB)](/api/endpoints/databases/create-database-mariadb): Create a new MariaDB database.
     - [Create (MongoDB)](/api/endpoints/databases/create-database-mongodb): Create a new MongoDB database.
     - [Create (MySQL)](/api/endpoints/databases/create-database-mysql): Create a new MySQL database.
     - [Create (PostgreSQL)](/api/endpoints/databases/create-database-postgresql): Create a new PostgreSQL database.
     - [Create (Redis)](/api/endpoints/databases/create-database-redis): Create a new Redis database.
+    - [Create (SQLite)](/api/endpoints/databases/create-database-sqlite): Create a new SQLite database.
     - [Create Env](/api/endpoints/databases/create-env-by-database-uuid): Create env by database UUID.
     - [Create Storage](/api/endpoints/databases/create-storage-by-database-uuid): Create a persistent storage or file storage for a database.
     - [Create Tag](/api/endpoints/databases/create-tag-by-database-uuid): Add tag(s) to a database by UUID.
@@ -775,7 +780,8 @@
     - [Delete Tag](/api/endpoints/databases/delete-tag-by-database-uuid): Remove a tag from a database by UUID.
     - [Database backups](/api/endpoints/databases/get-database-backups-by-uuid): Get backups details by database UUID.
     - [Database](/api/endpoints/databases/get-database-by-uuid): Get database by UUID.
-    - [Get database logs.](/api/endpoints/databases/get-database-logs-by-uuid): Get database logs by UUID.
+    - [Get database import status](/api/endpoints/databases/get-database-import)
+    - [Get database logs.](/api/endpoints/databases/get-database-logs-by-uuid): Get database logs by UUID. Requires the `read:sensitive` or `root` token ability.
     - [List backup executions](/api/endpoints/databases/list-backup-executions): Get all executions for a specific backup configuration.
     - [List](/api/endpoints/databases/list-databases): List all databases.
     - [List Envs](/api/endpoints/databases/list-envs-by-database-uuid): List all envs by database UUID.
@@ -793,6 +799,7 @@
     - [Update Env](/api/endpoints/databases/update-env-by-database-uuid): Update env by database UUID.
     - [Update Envs (Bulk)](/api/endpoints/databases/update-envs-by-database-uuid): Update multiple envs by database UUID.
     - [Update Storage](/api/endpoints/databases/update-storage-by-database-uuid): Update a persistent storage or file storage by database UUID.
+    - [Upload database import](/api/endpoints/databases/upload-database-import)
   - Deployments
     - [Cancel](/api/endpoints/deployments/cancel-deployment-by-uuid): Cancel a deployment by UUID.
     - [Deploy](/api/endpoints/deployments/deploy-by-tag-or-uuid): Deploy by tag or UUID using query parameters or a JSON body.
@@ -834,13 +841,13 @@
     - [Get Hetzner SSH Keys](/api/endpoints/hetzner/get-hetzner-ssh-keys): Get all SSH keys stored in the Hetzner account.
   - Notifications
     - [Get Discord notification settings](/api/endpoints/notifications/get-current-team-discord-notifications): Get the current team Discord notification settings. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
-    - [Get email notification settings](/api/endpoints/notifications/get-current-team-email-notifications): Get the current team email notification settings. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
+    - [Get email notification settings](/api/endpoints/notifications/get-current-team-email-notifications): Get the current team email notification settings, including `smtp_ehlo_domain`, the hostname sent with SMTP EHLO. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
     - [Get Pushover notification settings](/api/endpoints/notifications/get-current-team-pushover-notifications): Get the current team Pushover notification settings. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
     - [Get Slack notification settings](/api/endpoints/notifications/get-current-team-slack-notifications): Get the current team Slack notification settings. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
     - [Get Telegram notification settings](/api/endpoints/notifications/get-current-team-telegram-notifications): Get the current team Telegram notification settings. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
     - [Get webhook notification settings](/api/endpoints/notifications/get-current-team-webhook-notifications): Get the current team webhook notification settings. Encrypted secrets are only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner.
     - [Update Discord notification settings](/api/endpoints/notifications/update-current-team-discord-notifications): Update the current team Discord notification settings.
-    - [Update email notification settings](/api/endpoints/notifications/update-current-team-email-notifications): Update the current team email notification settings.
+    - [Update email notification settings](/api/endpoints/notifications/update-current-team-email-notifications): Update the current team email notification settings. Set `smtp_ehlo_domain` to a valid hostname to control the SMTP EHLO domain, or `null` to use the system default.
     - [Update Pushover notification settings](/api/endpoints/notifications/update-current-team-pushover-notifications): Update the current team Pushover notification settings.
     - [Update Slack notification settings](/api/endpoints/notifications/update-current-team-slack-notifications): Update the current team Slack notification settings.
     - [Update Telegram notification settings](/api/endpoints/notifications/update-current-team-telegram-notifications): Update the current team Telegram notification settings.
@@ -884,15 +891,15 @@
     - [List scheduled tasks](/api/endpoints/scheduled-tasks/list-scheduled-tasks-by-service-uuid): List all scheduled tasks for a service.
     - [Scheduled task](/api/endpoints/scheduled-tasks/update-scheduled-task-by-application-uuid): Update a scheduled task for an application.
     - [Scheduled task](/api/endpoints/scheduled-tasks/update-scheduled-task-by-service-uuid): Update a scheduled task for a service.
+  - Secret managers
+    - [Configure Application Secret Manager](/api/endpoints/secret-managers/configure-application-secret-manager): Configure the secret manager source used by an application.
+    - [Create Secret Manager Token](/api/endpoints/secret-managers/create-secret-manager-integration-token): Create and validate a Doppler, Infisical, or Vault integration token.
   - Servers
-    - [Claim imported server](/api/endpoints/servers/claim-server): Claim a managed host for this instance: write ownership file and rebind Sentinel.
-    - [Mark server transferred](/api/endpoints/servers/complete-server-transfer): Source-instance step: disable automations after a successful export/import handoff.
+    - [Check a registry login on a server](/api/endpoints/servers/check-server-registry-login): Check that the saved login of the server for a registry still works. Runs docker login with the saved credentials on the server.
     - [Create](/api/endpoints/servers/create-server): Create Server.
     - [Delete](/api/endpoints/servers/delete-server-by-uuid): Delete server by UUID.
     - [Disable Cloudflare Tunnel](/api/endpoints/servers/disable-server-cloudflare-tunnel): Mark Cloudflare Tunnel as disabled and restore ip_previous when available. Does not remove the remote cloudflared container.
     - [Enable Cloudflare Tunnel (manual)](/api/endpoints/servers/enable-server-cloudflare-tunnel): Manually mark Cloudflare Tunnel as enabled for a server (matches UI manual enable). Does not deploy cloudflared remotely.
-    - [Export server transfer bundle](/api/endpoints/servers/export-server-transfer-bundle): Export a server and all resources hosted on it as a versioned transfer bundle for moving between Coolify instances. Requires read:sensitive.
-    - [Write transfer bundle to server mailbox](/api/endpoints/servers/export-server-transfer-mailbox): Write an export bundle to /data/coolify/exports on the managed host for air-gapped import.
     - [Domains](/api/endpoints/servers/get-domains-by-server-uuid): Get domains by server.
     - [Resources](/api/endpoints/servers/get-resources-by-server-uuid): Get resources by server.
     - [Get](/api/endpoints/servers/get-server-by-uuid): Get server by UUID.
@@ -901,10 +908,11 @@
     - [Get log drain settings](/api/endpoints/servers/get-server-log-drains): Get log drain settings for a server owned by the authenticated team. Sensitive fields require the read:sensitive or root token ability.
     - [Get server proxy](/api/endpoints/servers/get-server-proxy): Get proxy settings for a server owned by the authenticated team. The raw proxy configuration is only returned when the token has `read:sensitive` (or `root`) and the user is a team admin/owner, and only when already stored in the database (no remote fetch).
     - [Get Sentinel settings](/api/endpoints/servers/get-server-sentinel): Get Sentinel settings for a server owned by the authenticated team. sentinel_token and sentinel_custom_url require the read:sensitive or root token ability.
-    - [Import server transfer bundle](/api/endpoints/servers/import-server-transfer-bundle): Import a server transfer bundle into this Coolify instance (adopt mode by default).
     - [List Docker cleanup executions](/api/endpoints/servers/list-server-docker-cleanup-executions): List recent Docker cleanup execution logs for a server owned by the authenticated team.
+    - [List server registry logins](/api/endpoints/servers/list-server-registries): List the Docker registries a server is logged in to and the registries its resources pull from or push to. Reads the Docker config of the server over SSH. Credentials are never returned, only registry names and usernames. Requires the `read:sensitive` ability.
     - [List](/api/endpoints/servers/list-servers): List all servers.
-    - [Migrate server to another Coolify instance](/api/endpoints/servers/migrate-server-between-instances): One-shot handoff: export this server, import+claim on the target instance (using the provided token), then disable automations here. Requires read:sensitive and write.
+    - [Log in to a registry on a server](/api/endpoints/servers/login-server-registry): Run docker login on the server, writing to the Docker config that deployments use. Logging in again to the same registry replaces the saved login.
+    - [Log out from a registry on a server](/api/endpoints/servers/logout-server-registry): Run docker logout on the server for a registry.
     - [Restart server proxy](/api/endpoints/servers/restart-server-proxy): Queue a proxy restart for a team-owned server.
     - [Run Docker cleanup](/api/endpoints/servers/run-server-docker-cleanup): Dispatch a manual Docker cleanup job for a server owned by the authenticated team.
     - [Save server proxy configuration](/api/endpoints/servers/save-server-proxy-configuration): Save the raw proxy Docker Compose configuration for a team-owned server. Multi-line configuration must be base64 encoded (same pattern as other compose payloads).
@@ -917,21 +925,24 @@
     - [Validate](/api/endpoints/servers/validate-server-by-uuid): Validate server by UUID.
   - Service applications
     - [Get service application](/api/endpoints/service-applications/get-service-application-by-service-and-app-uuid): Get a single compose service application by service UUID and application UUID.
-    - [Service application logs](/api/endpoints/service-applications/get-service-application-logs-by-service-and-app-uuid): Get Docker logs for a single compose service container.
+    - [Service application logs](/api/endpoints/service-applications/get-service-application-logs-by-service-and-app-uuid): Get Docker logs for a single compose service container. Requires the `read:sensitive` or `root` token ability.
     - [List service applications](/api/endpoints/service-applications/list-service-applications-by-service-uuid): List compose service applications (containers) for a single service.
     - [Update service application](/api/endpoints/service-applications/patch-service-application-by-service-and-app-uuid): Update fields for a compose service application. Use `url` for comma-separated public URLs (same rules as `urls[].url` on PATCH /services/{uuid}).
     - [Restart service application container](/api/endpoints/service-applications/post-restart-service-application-by-service-and-app-uuid): Restarts a single compose service container.
-    - [Service application logs](/api/endpoints/service-applications/post-service-application-logs-by-service-and-app-uuid): Get Docker logs for a single compose service container.
+    - [Service application logs](/api/endpoints/service-applications/post-service-application-logs-by-service-and-app-uuid): Get Docker logs for a single compose service container. Requires the `read:sensitive` or `root` token ability.
     - [Start or redeploy service application container](/api/endpoints/service-applications/post-start-service-application-by-service-and-app-uuid): Runs docker compose up for a single compose service (no-deps), optionally pulling the image and rebuilding.
     - [Stop service application container](/api/endpoints/service-applications/post-stop-service-application-by-service-and-app-uuid): Stops a single compose service container.
   - Service databases
+    - [Import service database backup](/api/endpoints/service-databases/create-service-database-import)
     - [Get service database](/api/endpoints/service-databases/get-service-database-by-service-and-database-uuid): Get a compose database by service UUID and database UUID.
-    - [Get service database logs](/api/endpoints/service-databases/get-service-database-logs-by-service-and-database-uuid): Get Docker logs for a compose database container.
+    - [Get service database import status](/api/endpoints/service-databases/get-service-database-import)
+    - [Get service database logs](/api/endpoints/service-databases/get-service-database-logs-by-service-and-database-uuid): Get Docker logs for a compose database container. Requires the `read:sensitive` or `root` token ability.
     - [List service databases](/api/endpoints/service-databases/list-service-databases-by-service-uuid): List compose databases for a single service.
     - [Update service database](/api/endpoints/service-databases/patch-service-database-by-service-and-database-uuid): Update mutable fields for a compose service database.
     - [Restart service database container](/api/endpoints/service-databases/restart-service-database-by-service-and-database-uuid): Restart a compose database container.
     - [Start or redeploy service database container](/api/endpoints/service-databases/start-service-database-by-service-and-database-uuid): Run docker compose up for a single compose database.
     - [Stop service database container](/api/endpoints/service-databases/stop-service-database-by-service-and-database-uuid): Stop a compose database container.
+    - [Upload service database import](/api/endpoints/service-databases/upload-service-database-import)
   - Services
     - [Clone](/api/endpoints/services/clone-service-by-uuid): Clone a service to a destination owned by the authenticated team.
     - [Create Env](/api/endpoints/services/create-env-by-service-uuid): Create env by service UUID.
@@ -944,7 +955,7 @@
     - [Delete Storage](/api/endpoints/services/delete-storage-by-service-uuid): Delete a persistent storage or file storage by service UUID.
     - [Delete Tag](/api/endpoints/services/delete-tag-by-service-uuid): Remove a tag from a service by UUID.
     - [Get](/api/endpoints/services/get-service-by-uuid): Get service by UUID.
-    - [Get service logs.](/api/endpoints/services/get-service-logs-by-uuid): Get logs for a specific service sub-resource by service UUID. The `sub_service_name` query parameter must match the `name` field of one of the service applications or databases returned by `GET /services/{uuid}`.
+    - [Get service logs.](/api/endpoints/services/get-service-logs-by-uuid): Get logs for a specific service sub-resource by service UUID. The `sub_service_name` query parameter must match the `name` field of one of the service applications or databases returned by `GET /services/{uuid}`. Requires the `read:sensitive` or `root` token ability.
     - [List Envs](/api/endpoints/services/list-envs-by-service-uuid): List all envs by service UUID.
     - [List](/api/endpoints/services/list-services): List all services.
     - [List Storages](/api/endpoints/services/list-storages-by-service-uuid): List all persistent storages and file storages by service UUID.
@@ -960,6 +971,9 @@
     - [Update Envs (Bulk)](/api/endpoints/services/update-envs-by-service-uuid): Update multiple envs by service UUID.
     - [Update](/api/endpoints/services/update-service-by-uuid): Update service by UUID.
     - [Update Storage](/api/endpoints/services/update-storage-by-service-uuid): Update a persistent storage or file storage by service UUID.
+  - Settings
+    - [Get instance email settings](/api/endpoints/settings/get-instance-email-settings): Get instance-wide SMTP and Resend settings. Requires a root-team token belonging to a root-team admin or owner. Sensitive fields require the `read:sensitive` or `root` token ability.
+    - [Update instance email settings](/api/endpoints/settings/update-instance-email-settings): Update instance-wide SMTP and Resend settings. Requires `write:sensitive` and a root-team token belonging to a root-team admin or owner.
   - Shared environment variables
     - [Create Environment Shared Env](/api/endpoints/shared-environment-variables/create-environment-shared-env): Create a shared environment variable for a project environment (type=environment).
     - [Create Project Shared Env](/api/endpoints/shared-environment-variables/create-project-shared-env): Create a shared environment variable for a project (type=project).
@@ -995,6 +1009,7 @@
     - [Authenticated Team Members](/api/endpoints/teams/get-token-team-members): Get members of the team bound to the API token.
     - [Authenticated Team](/api/endpoints/teams/get-token-team): Get the team bound to the API token.
     - [List](/api/endpoints/teams/list-teams): Get all teams.
+    - [Update authenticated team](/api/endpoints/teams/update-token-team): Update settings for the team bound to the API token.
   - Vultr
     - [Create Vultr Server](/api/endpoints/vultr/create-vultr-server): Create a Vultr instance and link it as a Coolify server.
     - [Get Vultr Operating Systems](/api/endpoints/vultr/get-vultr-operating-systems): Get all available Vultr operating systems.

@@ -36,8 +36,10 @@
 
   - **Manage Coolify**
   - Instance Management
-    - [Instance settings](/core/instance-management/instance-settings): Configure self-hosted Coolify instance settings for URL, access, updates, backups, email, authentication, and scheduled jobs.
+    - [Instance settings](/core/instance-management/instance-settings): Configure self-hosted Coolify instance settings for URL, access, updates, backups, email, authentication.
+    - [Instance Environment Variables](/core/instance-management/environment-variables): Configure PHP memory, workers, and scheduled job dispatch for a self-hosted Coolify instance and apply environment changes.
     - [Update Coolify](/core/instance-management/update): Update a self-hosted Coolify instance from the dashboard or terminal, and configure automatic updates.
+    - [Migrate realtime services to Reverb](/core/instance-management/reverb-migration): Prepare a self-hosted Coolify instance for the migration from the separate Soketi container to Laravel Reverb in the Coolify container.
     - [Update Coolify Database](/core/instance-management/update-coolify-database): Update or roll back the internal PostgreSQL database used by a self-hosted Coolify instance.
     - [Downgrade Coolify](/core/instance-management/downgrade): Return a self-hosted Coolify instance to an earlier release from the terminal, with backup and recovery safeguards.
     - [Uninstall Coolify](/core/instance-management/uninstallation): Remove a self-hosted Coolify instance or Coolify Cloud services from connected servers.
@@ -56,23 +58,25 @@
     - [File mounts](/core/persistent-storage/storage-mounts/file-mounts): Mount one Coolify-managed file or an existing host file at an exact path inside a container.
     - [Backup](/core/persistent-storage/storage-mounts/backups): Schedule local and S3 backups for application volume and directory mounts, set retention, and verify each execution.
   - S3 Storage
-    - [Overview](/core/s3-storage/overview): Configure S3-compatible storage for Coolify backups with Amazon S3, Cloudflare R2, Supabase Storage, and other supported providers.
+    - [S3 Storage Overview](/core/s3-storage/overview): Configure S3-compatible storage for Coolify backups with Amazon S3, Cloudflare R2, Supabase Storage, and other supported providers.
     - [Amazon S3](/core/s3-storage/aws): Connect Amazon S3 to Coolify by creating a bucket, IAM policy, IAM user, and access key.
     - [Cloudflare R2](/core/s3-storage/r2): Configure Cloudflare R2 S3-compatible storage for Coolify backups with bucket creation, API token setup, and access credentials.
     - [Supabase Storage](/core/s3-storage/supabase): Configure Supabase Storage as an S3-compatible backup destination using your project endpoint, bucket, region, and access keys.
 
   - **Infrastructure**
   - Servers
-    - [Overview](/core/infrastructure/servers/overview): Understand server roles in Coolify and choose the right way to add, provision, and manage a server.
+    - [Servers Overview](/core/infrastructure/servers/overview): Understand server roles in Coolify and choose the right way to add, provision, and manage a server.
     - [Add Server](/core/infrastructure/servers/add-server): Connect an existing Linux server to Coolify with SSH and prepare it for deployments.
-    - [Provision Cloud Server](/core/infrastructure/servers/provision-cloud-server): Purchase and create a Hetzner, DigitalOcean, or Vultr server from the Coolify dashboard.
+    - [Provision Cloud Server](/core/infrastructure/servers/provision-cloud-server): Purchase and create a Hetzner, DigitalOcean, Vultr, or Hostinger server from the Coolify dashboard.
     - [Manage Server](/core/infrastructure/servers/manage-server): Update a connected server's connection, domain, timezone, build role, and cloud-provider link.
     - [Remove Server](/core/infrastructure/servers/remove-server): Remove a server from Coolify, optionally delete its resources, and understand provider deletion.
     - [OpenSSH](/core/infrastructure/servers/openssh): Configure OpenSSH for the localhost server or a remote server connected to Coolify.
     - [Firewall](/core/infrastructure/servers/firewall): Open the firewall ports required by Coolify, its proxy, connected servers, and dashboard features.
     - [Non-root User](/core/infrastructure/servers/non-root-user): Create a non-root SSH user and give it the access Coolify needs to manage a server.
     - [Build Servers](/core/infrastructure/servers/build-servers): Add a dedicated build server and configure an application to use it for Docker image builds.
+    - [GitHub Actions Runners](/core/infrastructure/servers/github-actions-runners): Run GitHub Actions workflow jobs of an organization on your Coolify build servers, in ephemeral Docker containers.
     - [Server Patching](/core/infrastructure/servers/server-patching): Check for operating-system package updates and install selected updates from the Coolify dashboard.
+    - [Docker Images](/core/infrastructure/servers/docker-images): Inspect Docker image disk usage and remove unused images from a server.
     - [Automated Docker Cleanup](/core/infrastructure/servers/automated-docker-cleanup): Configure scheduled Docker cleanup and safely remove unused images, volumes, and networks from a server.
     - [Web Terminal](/core/infrastructure/servers/web-terminal): Open a browser terminal for a server or container and enable or disable terminal access for a server.
   - Scaling
@@ -83,7 +87,7 @@
 
   - **Networking**
   - Destinations
-    - [Overview](/core/networking/destinations/overview): Understand how Coolify uses Docker network destinations to deploy resources on your servers.
+    - [Destinations Overview](/core/networking/destinations/overview): Understand how Coolify uses Docker network destinations to deploy resources on your servers.
     - [Create a Destination](/core/networking/destinations/create): Create another Docker network destination in Coolify or scan a network that already exists on a server.
     - [Manage Destinations](/core/networking/destinations/manage): Review resources, rename destinations, select deployment networks, and clone resources to another destination.
     - [Delete Destination](/core/networking/destinations/delete): Safely remove a destination and its Docker network after reviewing every attached resource.
@@ -93,7 +97,9 @@
     - [Overview](/core/networking/proxy/overview)
     - Traefik
       - [Overview](/core/networking/proxy/traefik/overview)
+      - [Update Traefik](/core/networking/proxy/traefik/update): Review Traefik release notes, change the proxy image version in Coolify, and restart the proxy.
       - [Basic Authentication](/core/networking/proxy/traefik/basic-auth): Protect Coolify applications and Docker Compose services with Traefik HTTP basic authentication.
+      - [TLS Certificates](/core/networking/proxy/traefik/tls-certificates): Manage Traefik ACME certificates and restore backups of acme.json.
       - [Custom SSL Certificates](/core/networking/proxy/traefik/custom-ssl-certs): Load certificates from a Coolify server into Traefik with dynamic configuration.
       - [Dashboard](/core/networking/proxy/traefik/dashboard): Expose the Traefik dashboard through a dedicated authenticated domain in Coolify.
       - [Custom Middlewares](/core/networking/proxy/traefik/custom-middlewares): Add reusable Traefik request middleware and redirects to Coolify resources.
@@ -105,6 +111,7 @@
     - Caddy
       - [Overview](/core/networking/proxy/caddy/overview)
       - [Basic Authentication](/core/networking/proxy/caddy/basic-auth): Protect Coolify applications with Caddy HTTP basic authentication.
+      - [Custom SSL Certificates](/core/networking/proxy/caddy/custom-ssl-certs): Mount your certificate and private key into Coolify's Caddy proxy and configure the resource's TLS label.
       - [DNS Challenge](/core/networking/proxy/caddy/dns-challenge): Build Caddy with a DNS provider module and use DNS-based ACME validation in Coolify.
 
   - **Team Management**
@@ -116,6 +123,7 @@
     - [Manage Members](/core/team/members/manage-members): Review a Coolify team, change member roles, and manage pending invitations.
   - [Roles & Permissions](/core/team/roles-and-permissions): Compare Owner, Admin, and Member access across team management, resources, servers, credentials, and API tokens.
   - [Shared Variables](/core/team/shared-variables): Create team, project, environment, and server-scoped values and reference them in Coolify resource configuration.
+  - [Audit Log](/core/team/audit-log): Search team activity and review resource changes in Coolify's audit log.
 
   - **Security**
   - Authentication
@@ -129,14 +137,16 @@
       - [Discord](/core/security/authentication/oauth/discord): Configure Discord OAuth sign-in for Coolify with a Discord application and registered redirect URI.
       - [Infomaniak](/core/security/authentication/oauth/infomaniak): Configure Infomaniak OAuth sign-in for Coolify with an Application credential and callback URL.
     - SSO
-      - [Overview](/core/security/authentication/sso/overview): Configure centralized Coolify sign-in with Authentik, Clerk, or Zitadel.
+      - [Overview](/core/security/authentication/sso/overview): Configure centralized Coolify sign-in with OpenID Connect, Authentik, Clerk, or Zitadel.
+      - [OpenID Connect](/core/security/authentication/sso/oidc): Connect an OpenID Connect identity provider to Coolify and control account creation.
       - [Authentik](/core/security/authentication/sso/authentik): Configure Authentik SSO for Coolify with an OAuth2/OpenID Connect provider, application, and base URL.
       - [Clerk](/core/security/authentication/sso/clerk): Configure Clerk SSO for Coolify by creating a Clerk OAuth application and using its Frontend API URL.
       - [Zitadel](/core/security/authentication/sso/zitadel): Configure Zitadel SSO for Coolify with a confidential web application, client secret, and instance base URL.
     - [2FA](/core/security/authentication/2fa): Configure two-factor authentication, save recovery codes, and manage 2FA for a Coolify account.
+    - [Profile and Account Deletion](/core/security/authentication/profile): Manage your Coolify profile, linked identity, and account deletion.
   - Credentials
     - [SSH Keys](/core/security/credentials/ssh-keys): Create, authorize, rotate, and remove the SSH keys Coolify uses for servers and private Git repositories.
-    - [Cloud Tokens](/core/security/credentials/cloud-tokens): Create and manage the Hetzner, DigitalOcean, and Vultr credentials Coolify uses for cloud servers.
+    - [Cloud Tokens](/core/security/credentials/cloud-tokens): Create and manage the Hetzner, DigitalOcean, Vultr, and Hostinger credentials Coolify uses for cloud servers.
     - [Cloud-Init Scripts](/core/security/credentials/cloud-init-scripts): Create reusable cloud-init YAML for Hetzner, DigitalOcean, and Vultr server provisioning.
     - [API Tokens](/core/security/credentials/api-tokens): Create, scope, store, rotate, and revoke Coolify API tokens for integrations and automation.
 
@@ -145,6 +155,7 @@
     - [Overview](/core/observability/monitoring/overview): Understand how Coolify monitors server availability, container state, disk usage, backups, and CPU and memory metrics.
     - [Sentinel](/core/observability/monitoring/sentinel): Configure and troubleshoot Coolify Sentinel for server health, container status, disk usage, and metrics collection.
     - [Metrics](/core/observability/monitoring/metrics): Enable and view Coolify CPU and memory metrics for servers, applications, and standalone databases.
+    - [Traffic Analytics](/core/observability/monitoring/traffic-analytics): Enable proxy traffic analytics for Traefik and Caddy and configure collection and retention.
   - Log Drains
     - [Overview](/core/observability/log-drains/overview): Understand how Coolify forwards application, database, and service container logs to an external destination.
     - [Axiom](/core/observability/log-drains/axiom): Send Coolify application, database, and service container logs to an Axiom dataset.
@@ -301,8 +312,8 @@
 
   - **Operations**
   - [Overview](/databases/operations/overview): Monitor, maintain, and protect a running standalone database.
-  - [Backups](/databases/backups): Schedule, retain, and store PostgreSQL, MySQL, MariaDB, MongoDB, and ClickHouse database backups in Coolify.
-  - [Restore a Database](/databases/restore): Restore a PostgreSQL, MySQL, MariaDB, or MongoDB backup from a server file, upload, or S3-compatible storage.
+  - [Backups](/databases/backups): Schedule, retain, and store PostgreSQL, MySQL, MariaDB, MongoDB, ClickHouse, and SQLite database backups in Coolify.
+  - [Restore a Database](/databases/restore): Restore database backups from an upload, a server file, or S3-compatible storage.
   - [Database SSL](/databases/ssl): Enable SSL for standalone database connections in Coolify, choose a verification mode, and mount the Coolify CA certificate when required.
   - [Resource Operations](/databases/operations/resource-operations): Clone a standalone database to another destination or move it between projects and environments.
   - [Danger Zone](/databases/operations/danger-zone): Permanently delete a standalone database and choose which related Docker resources Coolify removes.
@@ -316,6 +327,7 @@
   - [Dragonfly](/databases/dragonfly): Deploy and operate Dragonfly on Coolify with Redis-compatible connections, persistent storage, TLS, and health checks.
   - [KeyDB](/databases/keydb): Deploy and operate KeyDB on Coolify with Redis-compatible connections, persistent storage, TLS, and health checks.
   - [ClickHouse](/databases/clickhouse): Deploy and operate ClickHouse on Coolify for analytical workloads with persistent storage, scheduled backups, and health checks.
+  - [SQLite](/databases/sqlite): Create an experimental SQLite database and mount its files into an application on the same server.
 - Integrations
 
   - **Networking**
@@ -327,6 +339,8 @@
     - [Full TLS](/integrations/networking/cloudflare/tunnels/full-tls): Configure end-to-end HTTPS for Coolify resources through Cloudflare Tunnels with Origin Certificates, strict TLS encryption, and proper domain setup.
 
   - **Security**
+  - [Secret Manager Credentials](/integrations/security/secret-managers): Create credentials for Doppler, Infisical, or HashiCorp Vault and add them to Coolify.
+  - [Use a Secret Manager](/integrations/security/using-secret-managers): Reference remote secrets in Coolify applications, services, and databases.
   - [Cloudflare DDoS Protection](/integrations/security/cloudflare/ddos-protection): Learn how to set up Cloudflare DDoS protection for applications deployed with Coolify.
   - [CrowdSec](https://www.crowdsec.net/blog/securing-automated-app-deployment-crowdsec-and-coolify)
 - MCP
@@ -429,7 +443,11 @@
     - [List](/cli/command-reference/commands/app/list): List all applications in Coolify.
     - [Logs](/cli/command-reference/commands/app/logs): Get application logs
     - [Move](/cli/command-reference/commands/app/move): Move an application to another environment
+    - [Previews create](/cli/command-reference/commands/app/previews-create): Open or redeploy a preview deployment
     - [Previews delete](/cli/command-reference/commands/app/previews-delete): Delete a preview deployment for an application. First argument is the application UUID, second is the pull request ID.
+    - [Previews get](/cli/command-reference/commands/app/previews-get): Get a preview deployment of an application by pull request ID.
+    - [Previews list](/cli/command-reference/commands/app/previews-list): List the preview deployments of an application, newest pull request first.
+    - [Previews update](/cli/command-reference/commands/app/previews-update): Update the domains of a preview deployment
     - [Restart](/cli/command-reference/commands/app/restart): Restart a running application.
     - [Rollback images](/cli/command-reference/commands/app/rollback-images): List rollback images
     - [Rollback run](/cli/command-reference/commands/app/rollback-run): Rollback application to a commit
@@ -590,6 +608,10 @@
     - [Proxy restart](/cli/command-reference/commands/server/proxy-restart): Restart proxy
     - [Proxy set config](/cli/command-reference/commands/server/proxy-set-config): Save raw proxy configuration
     - [Proxy update](/cli/command-reference/commands/server/proxy-update): Update proxy settings
+    - [Registry check](/cli/command-reference/commands/server/registry-check): Check that the saved registry login of a server still works
+    - [Registry list](/cli/command-reference/commands/server/registry-list): List registry logins of a server
+    - [Registry login](/cli/command-reference/commands/server/registry-login): Log in to a Docker registry on one or more servers
+    - [Registry logout](/cli/command-reference/commands/server/registry-logout): Log out from a Docker registry on a server
     - [Remove](/cli/command-reference/commands/server/remove): Remove a server
     - [Sentinel get](/cli/command-reference/commands/server/sentinel-get): Get Sentinel settings
     - [Sentinel update](/cli/command-reference/commands/server/sentinel-update): Update Sentinel settings via JSON
@@ -708,6 +730,7 @@
     - [Create (Dockerfile without git)](/api/endpoints/applications/create-dockerfile-application): Create new application based on a simple Dockerfile (without git).
     - [Create (Docker Image without git)](/api/endpoints/applications/create-dockerimage-application): Create new application based on a prebuilt docker image (without git).
     - [Create Env](/api/endpoints/applications/create-env-by-application-uuid): Create env by application UUID.
+    - [Create Preview Deployment](/api/endpoints/applications/create-preview-deployment-by-application-uuid): Open a preview deployment for a pull request and queue its deployment. When the preview already exists, it is redeployed. Git based applications need git_type unless they use a GitHub or GitLab App source; Bitbucket also needs commit. Docker Image applications need docker_tag for a new preview.
     - [Create (Private - Deploy Key)](/api/endpoints/applications/create-private-deploy-key-application): Create new application based on a private repository through a Deploy Key.
     - [Create (Private - GH App)](/api/endpoints/applications/create-private-github-app-application): Create new application based on a private repository through a Github App.
     - [Create (Public)](/api/endpoints/applications/create-public-application): Create new application based on a public git repository.
@@ -722,10 +745,12 @@
     - [Get](/api/endpoints/applications/get-application-by-uuid): Get application by UUID.
     - [Get application logs.](/api/endpoints/applications/get-application-logs-by-uuid): Get application logs by UUID. Requires the `read:sensitive` or `root` token ability.
     - [Get preview application logs.](/api/endpoints/applications/get-preview-application-logs-by-pull-request-id): Get runtime container logs for a preview deployment by application UUID and pull request ID. Requires the `read:sensitive` or `root` token ability.
+    - [Get Preview Deployment](/api/endpoints/applications/get-preview-deployment-by-pull-request-id): Get a preview deployment by pull request ID.
     - [List Destinations](/api/endpoints/applications/list-application-destinations): List primary and additional destinations for a standalone application.
     - [List Rollback Images](/api/endpoints/applications/list-application-rollback-images): List available Docker images for rolling back an application. Returns an empty list when the server is unavailable or remote inspection is not possible.
     - [List](/api/endpoints/applications/list-applications): List all applications.
     - [List Envs](/api/endpoints/applications/list-envs-by-application-uuid): List all envs by application UUID.
+    - [List Preview Deployments](/api/endpoints/applications/list-preview-deployments-by-application-uuid): List the preview deployments of an application, newest pull request first.
     - [List Storages](/api/endpoints/applications/list-storages-by-application-uuid): List all persistent storages and file storages by application UUID.
     - [List Tags](/api/endpoints/applications/list-tags-by-application-uuid): List tags for an application by UUID.
     - [Migrate to Server](/api/endpoints/applications/migrate-application-by-uuid): Migrate an application to another destination/server owned by the authenticated team. Stops the application, optionally transfers persistent volume data when both servers are managed by Coolify, and updates database records. Redeploy after migration completes.
@@ -742,6 +767,8 @@
     - [Update Envs (Bulk)](/api/endpoints/applications/update-envs-by-application-uuid): Update multiple envs by application UUID.
     - [Update Preview Domains](/api/endpoints/applications/update-preview-domains-by-pull-request-id): Replace domains for a preview deployment. Use domains for regular applications or docker_compose_domains for Docker Compose applications. Ports are stored as internal overrides while public domains remain portless.
     - [Update Storage](/api/endpoints/applications/update-storage-by-application-uuid): Update a persistent storage or file storage by application UUID.
+  - Audit events
+    - [List](/api/endpoints/audit-events/list-audit-events): List audit events of the team. Only team admins and owners can view audit events. Actor e-mail, token, metadata, changes, IP address, and user agent are returned only for tokens with the read:sensitive or root permission.
   - Cloud init scripts
     - [Create Cloud-init Script](/api/endpoints/cloud-init-scripts/create-cloud-init-script): Create a new cloud-init script for the authenticated team.
     - [Delete Cloud-init Script](/api/endpoints/cloud-init-scripts/delete-cloud-init-script-by-uuid): Delete a cloud-init script by UUID.

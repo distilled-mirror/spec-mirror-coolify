@@ -3416,18 +3416,6 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "project_uuid": {
-                    "type": "string",
-                    "description": "The project UUID."
-                  },
-                  "server_uuid": {
-                    "type": "string",
-                    "description": "The server UUID."
-                  },
-                  "environment_name": {
-                    "type": "string",
-                    "description": "The environment name."
-                  },
                   "github_app_uuid": {
                     "type": "string",
                     "description": "The Github App UUID."
@@ -3443,10 +3431,6 @@
                   "ports_exposes": {
                     "type": "string",
                     "description": "The ports to expose."
-                  },
-                  "destination_uuid": {
-                    "type": "string",
-                    "description": "The destination UUID."
                   },
                   "build_pack": {
                     "type": "string",
@@ -7092,6 +7076,10 @@
                   "limits_cpu_shares": {
                     "type": "integer",
                     "description": "CPU shares of the database"
+                  },
+                  "instant_deploy": {
+                    "type": "boolean",
+                    "description": "Restart the database after the update. Requires the deploy ability."
                   },
                   "postgres_user": {
                     "type": "string",
@@ -19254,6 +19242,11 @@
                   "docker_compose_raw": {
                     "type": "string",
                     "description": "The base64 encoded Docker Compose content."
+                  },
+                  "connect_to_docker_network": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Connect the service to the predefined docker network."
                   },
                   "urls": {
                     "type": "array",

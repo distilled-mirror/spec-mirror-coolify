@@ -49,7 +49,7 @@
 ## Core / Manage Coolify / Instance Management
 
 - [Instance settings](https://coolify.io/docs/core/instance-management/instance-settings): Configure self-hosted Coolify instance settings for URL, access, updates, backups, email, authentication.
-- [Instance Environment Variables](https://coolify.io/docs/core/instance-management/environment-variables): Configure PHP memory, workers, scheduled job dispatch, SSH host key checks, and API limits for a self-hosted Coolify instance and apply environment changes.
+- [Instance Environment Variables](https://coolify.io/docs/core/instance-management/environment-variables): Configure PHP memory, workers, scheduled job dispatch, SSH host key checks and retries, log retention, session cookies, and API limits for a self-hosted Coolify instance and apply environment changes.
 - [Update Coolify](https://coolify.io/docs/core/instance-management/update): Update a self-hosted Coolify instance from the dashboard or terminal, and configure automatic updates.
 - [Migrate realtime services to Reverb](https://coolify.io/docs/core/instance-management/reverb-migration): Prepare a self-hosted Coolify instance for the migration from the separate Soketi container to Laravel Reverb in the Coolify container.
 - [Update Coolify Database](https://coolify.io/docs/core/instance-management/update-coolify-database): Update or roll back the internal PostgreSQL database used by a self-hosted Coolify instance.
@@ -393,6 +393,7 @@
 - [ActivePieces](https://coolify.io/docs/services/activepieces)
 - [Actual Budget](https://coolify.io/docs/services/actualbudget)
 - [Affine](https://coolify.io/docs/services/affine)
+- [Airbyte](https://coolify.io/docs/services/airbyte)
 - [Alexandrie](https://coolify.io/docs/services/alexandrie)
 - [AnythingLLM](https://coolify.io/docs/services/anythingllm)
 - [AppFlowy](https://coolify.io/docs/services/appflowy)
@@ -421,12 +422,12 @@
 - [Castopod](https://coolify.io/docs/services/castopod)
 - [Celld](https://coolify.io/docs/services/celld)
 - [Change Detection](https://coolify.io/docs/services/changedetection)
-- [Chaskiq](https://coolify.io/docs/services/chaskiq)
 - [Chatwoot](https://coolify.io/docs/services/chatwoot)
 - [Checkmate](https://coolify.io/docs/services/checkmate)
 - [Chibisafe](https://coolify.io/docs/services/chibisafe)
 - [Chroma](https://coolify.io/docs/services/chroma)
 - [ClassicPress](https://coolify.io/docs/services/classicpress)
+- [ClassroomIO](https://coolify.io/docs/services/classroomio)
 - [Cloudbeaver](https://coolify.io/docs/services/cloudbeaver)
 - [Cloudflare DDNS](https://coolify.io/docs/services/cloudflare-ddns)
 - [Cloudflared](https://coolify.io/docs/services/cloudflared)
@@ -441,6 +442,7 @@
 - [Dashy](https://coolify.io/docs/services/dashy)
 - [Databasus](https://coolify.io/docs/services/databasus)
 - [Denokv](https://coolify.io/docs/services/denokv)
+- [Dify](https://coolify.io/docs/services/dify)
 - [Directus](https://coolify.io/docs/services/directus)
 - [Diun](https://coolify.io/docs/services/diun)
 - [Docker Registry](https://coolify.io/docs/services/docker-registry)
@@ -448,6 +450,7 @@
 - [Docmost](https://coolify.io/docs/services/docmost)
 - [Documenso](https://coolify.io/docs/services/documenso)
 - [Docuseal](https://coolify.io/docs/services/docuseal)
+- [Dograh](https://coolify.io/docs/services/dograh)
 - [DokuWiki](https://coolify.io/docs/services/dokuwiki)
 - [Dolibarr](https://coolify.io/docs/services/dolibarr)
 - [Dozzle](https://coolify.io/docs/services/dozzle)
@@ -553,6 +556,7 @@
 - [Martin](https://coolify.io/docs/services/martin)
 - [Matrix](https://coolify.io/docs/services/matrix)
 - [Mattermost](https://coolify.io/docs/services/mattermost)
+- [MCPHub](https://coolify.io/docs/services/mcphub)
 - [Mealie](https://coolify.io/docs/services/mealie)
 - [Mediawiki](https://coolify.io/docs/services/mediawiki)
 - [Meilisearch](https://coolify.io/docs/services/meilisearch)
@@ -564,6 +568,7 @@
 - [Minecraft](https://coolify.io/docs/services/minecraft)
 - [Miniflux](https://coolify.io/docs/services/miniflux)
 - [Mixpost](https://coolify.io/docs/services/mixpost)
+- [Monica](https://coolify.io/docs/services/monica)
 - [Mosquitto](https://coolify.io/docs/services/mosquitto)
 - [N8N](https://coolify.io/docs/services/n8n)
 - [Navidrome](https://coolify.io/docs/services/navidrome)
@@ -661,6 +666,7 @@
 - [Stirling PDF](https://coolify.io/docs/services/stirling-pdf)
 - [Strapi](https://coolify.io/docs/services/strapi)
 - [Supabase](https://coolify.io/docs/services/supabase)
+- [SuperPlane](https://coolify.io/docs/services/superplane)
 - [Superset](https://coolify.io/docs/services/superset)
 - [Supertokens](https://coolify.io/docs/services/supertokens)
 - [Sure](https://coolify.io/docs/services/sure)
@@ -692,6 +698,7 @@
 - [Weblate](https://coolify.io/docs/services/weblate)
 - [Whoogle](https://coolify.io/docs/services/whoogle)
 - [Wikijs](https://coolify.io/docs/services/wikijs)
+- [Windmill](https://coolify.io/docs/services/windmill)
 - [Wings](https://coolify.io/docs/services/wings)
 - [Wireguard Easy](https://coolify.io/docs/services/wireguard-easy)
 - [WordPress](https://coolify.io/docs/services/wordpress)
@@ -1694,11 +1701,11 @@
 
 ## Troubleshoot / Server
 
-- [Connection Unstable](https://coolify.io/docs/troubleshoot/server/connection-issues): Fix intermittent Coolify SSH connections caused by UFW LIMIT rules, iptables rate limits, or provider firewalls, and allow the Coolify control plane on the SSH port.
+- [Connection Unstable](https://coolify.io/docs/troubleshoot/server/connection-issues): Fix intermittent Coolify SSH connections caused by UFW LIMIT rules, iptables rate limits, or provider firewalls, understand SSH retries, and allow the Coolify control plane on the SSH port.
 - [Server Crash During Build](https://coolify.io/docs/troubleshoot/server/crash-during-build): Fix server crashes during Coolify builds by offloading to external build servers, using GitHub Actions, or upgrading server resources for Docker image builds.
 - [2FA Stopped Working](https://coolify.io/docs/troubleshoot/server/two-factor-stopped-working): Fix two-factor authentication failures in Coolify by synchronizing server time with NTP, checking systemd-timesyncd, and configuring firewall port 123 access.
 - [Raspberry Pi Crashes](https://coolify.io/docs/troubleshoot/server/raspberry-crashes): Fix Raspberry Pi crashes on Coolify by upgrading to 4GB+ RAM or limiting Docker memory usage on 2GB models with slow SD card configurations.
-- [Server Validation Issues](https://coolify.io/docs/troubleshoot/server/validation-issues): Resolve Coolify server validation errors such as libcrypto errors, missing authorized keys, a changed SSH host key, and the maximum number of SSH sessions.
+- [Server Validation Issues](https://coolify.io/docs/troubleshoot/server/validation-issues): Resolve Coolify server validation errors such as libcrypto errors, missing authorized keys, a changed SSH host key, an unsupported operating system, and the maximum number of SSH sessions.
 
 ## Troubleshoot / DNS & Domains
 
@@ -1708,14 +1715,13 @@
 
 ## Full text
 
-- [All pages](https://coolify.io/docs/llms-full.txt): 1330 pages, 3.4 MB. Too large for most agents; use the files below.
-- [Overview (part 1 of 6)](https://coolify.io/docs/llms-full/overview-1.txt): Home to Start with Coolify Cloud (11 pages, 72 KB)
-- [Overview (part 2 of 6)](https://coolify.io/docs/llms-full/overview-2.txt): Start with Self-hosted, Support, Team, Cloud vs Self-Hosted, Videos, Contribute (9 pages, 67 KB)
-- [Overview (part 3 of 6)](https://coolify.io/docs/llms-full/overview-3.txt): Integrations (9 pages, 81 KB)
-- [Overview (part 4 of 6)](https://coolify.io/docs/llms-full/overview-4.txt): Knowledge Base (7 pages, 46 KB)
-- [Overview (part 5 of 6)](https://coolify.io/docs/llms-full/overview-5.txt): MCP (24 pages, 63 KB)
-- [Overview (part 6 of 6)](https://coolify.io/docs/llms-full/overview-6.txt): Troubleshoot (21 pages, 96 KB)
-- [API Reference](https://coolify.io/docs/llms-full/api.txt): Authorization to Rate Limits (7 pages, 56 KB)
+- [All pages](https://coolify.io/docs/llms-full.txt): 1336 pages, 3.5 MB. Too large for most agents; use the files below.
+- [Overview (part 1 of 5)](https://coolify.io/docs/llms-full/overview-1.txt): Home to Start with Coolify Cloud (11 pages, 72 KB)
+- [Overview (part 2 of 5)](https://coolify.io/docs/llms-full/overview-2.txt): Start with Self-hosted, Support, Team, Cloud vs Self-Hosted, Videos, Contribute (9 pages, 69 KB)
+- [Overview (part 3 of 5)](https://coolify.io/docs/llms-full/overview-3.txt): Integrations (9 pages, 81 KB)
+- [Overview (part 4 of 5)](https://coolify.io/docs/llms-full/overview-4.txt): Knowledge Base (7 pages, 46 KB)
+- [Overview (part 5 of 5)](https://coolify.io/docs/llms-full/overview-5.txt): MCP (24 pages, 64 KB)
+- [API Reference](https://coolify.io/docs/llms-full/api.txt): Authorization to Rate Limits (7 pages, 59 KB)
 - [API Reference / Endpoints (part 1 of 5)](https://coolify.io/docs/llms-full/api/endpoints-1.txt): Audit events to Integration tokens (67 pages, 97 KB)
 - [API Reference / Endpoints (part 2 of 5)](https://coolify.io/docs/llms-full/api/endpoints-2.txt): Notifications to Secret managers (53 pages, 76 KB)
 - [API Reference / Endpoints (part 3 of 5)](https://coolify.io/docs/llms-full/api/endpoints-3.txt): Servers, Service applications (44 pages, 88 KB)
@@ -1726,34 +1732,36 @@
 - [API Reference / Endpoints / Databases (part 1 of 2)](https://coolify.io/docs/llms-full/api/endpoints/databases-1.txt): Clone to Database (40 pages, 98 KB)
 - [API Reference / Endpoints / Databases (part 2 of 2)](https://coolify.io/docs/llms-full/api/endpoints/databases-2.txt): Update Env, Update Envs (Bulk), Update Storage, Upload database import (4 pages, 9 KB)
 - [Applications (part 1 of 6)](https://coolify.io/docs/llms-full/applications-1.txt): Applications, Choose a Deployment Method, Coming from Managed Platforms, How Applications Work, What is an application (5 pages, 23 KB)
-- [Applications (part 2 of 6)](https://coolify.io/docs/llms-full/applications-2.txt): Builds (11 pages, 86 KB)
-- [Applications (part 3 of 6)](https://coolify.io/docs/llms-full/applications-3.txt): Configuration (7 pages, 80 KB)
-- [Applications (part 4 of 6)](https://coolify.io/docs/llms-full/applications-4.txt): Deployments, Framework examples (18 pages, 72 KB)
-- [Applications (part 5 of 6)](https://coolify.io/docs/llms-full/applications-5.txt): Operations (5 pages, 51 KB)
-- [Applications (part 6 of 6)](https://coolify.io/docs/llms-full/applications-6.txt): Source Code (16 pages, 76 KB)
+- [Applications (part 2 of 6)](https://coolify.io/docs/llms-full/applications-2.txt): Builds (11 pages, 90 KB)
+- [Applications (part 3 of 6)](https://coolify.io/docs/llms-full/applications-3.txt): Configuration (7 pages, 83 KB)
+- [Applications (part 4 of 6)](https://coolify.io/docs/llms-full/applications-4.txt): Deployments, Framework examples (18 pages, 78 KB)
+- [Applications (part 5 of 6)](https://coolify.io/docs/llms-full/applications-5.txt): Operations (5 pages, 53 KB)
+- [Applications (part 6 of 6)](https://coolify.io/docs/llms-full/applications-6.txt): Source Code (16 pages, 79 KB)
 - [CLI](https://coolify.io/docs/llms-full/cli.txt): Authentication to What is the Coolify CLI? (10 pages, 28 KB)
 - [CLI / Command Reference / Commands (part 1 of 3)](https://coolify.io/docs/llms-full/cli/command-reference/commands-1.txt): List audit events to Cloud Token (73 pages, 95 KB)
 - [CLI / Command Reference / Commands (part 2 of 3)](https://coolify.io/docs/llms-full/cli/command-reference/commands-2.txt): Config to S3 (113 pages, 84 KB)
 - [CLI / Command Reference / Commands (part 3 of 3)](https://coolify.io/docs/llms-full/cli/command-reference/commands-3.txt): Server, Service, Settings, Shared Env, Tag, Teams (132 pages, 89 KB)
-- [Core (part 1 of 6)](https://coolify.io/docs/llms-full/core-1.txt): Build and Deployment Model to What is Coolify (9 pages, 74 KB)
+- [Core (part 1 of 6)](https://coolify.io/docs/llms-full/core-1.txt): Build and Deployment Model to What is Coolify (9 pages, 75 KB)
 - [Core (part 2 of 6)](https://coolify.io/docs/llms-full/core-2.txt): Automation, Backup and Recovery (14 pages, 71 KB)
-- [Core (part 3 of 6)](https://coolify.io/docs/llms-full/core-3.txt): Instance Management (7 pages, 90 KB)
-- [Core (part 4 of 6)](https://coolify.io/docs/llms-full/core-4.txt): Notifications (9 pages, 70 KB)
-- [Core (part 5 of 6)](https://coolify.io/docs/llms-full/core-5.txt): Observability, Persistent storage (14 pages, 93 KB)
-- [Core (part 6 of 6)](https://coolify.io/docs/llms-full/core-6.txt): S3 Storage, Team (15 pages, 76 KB)
+- [Core (part 3 of 6)](https://coolify.io/docs/llms-full/core-3.txt): Instance Management (7 pages, 92 KB)
+- [Core (part 4 of 6)](https://coolify.io/docs/llms-full/core-4.txt): Notifications (9 pages, 72 KB)
+- [Core (part 5 of 6)](https://coolify.io/docs/llms-full/core-5.txt): Observability, Persistent storage (14 pages, 95 KB)
+- [Core (part 6 of 6)](https://coolify.io/docs/llms-full/core-6.txt): S3 Storage, Team (15 pages, 80 KB)
 - [Core / Infrastructure](https://coolify.io/docs/llms-full/core/infrastructure.txt): Scaling (4 pages, 21 KB)
-- [Core / Infrastructure / Servers (part 1 of 2)](https://coolify.io/docs/llms-full/core/infrastructure/servers-1.txt): Add Server to Provision Cloud Server (11 pages, 100 KB)
-- [Core / Infrastructure / Servers (part 2 of 2)](https://coolify.io/docs/llms-full/core/infrastructure/servers-2.txt): Remove Server, Server Security, Server Patching, Server Transfer (Beta), Web Terminal (5 pages, 47 KB)
-- [Core / Networking](https://coolify.io/docs/llms-full/core/networking.txt): DNS, Domains, Destinations (6 pages, 37 KB)
-- [Core / Networking / Proxy (part 1 of 2)](https://coolify.io/docs/llms-full/core/networking/proxy-1.txt): Maintenance and Error Pages, Proxy Overview, Caddy, Custom (8 pages, 77 KB)
+- [Core / Infrastructure / Servers (part 1 of 2)](https://coolify.io/docs/llms-full/core/infrastructure/servers-1.txt): Add Server to Servers Overview (10 pages, 88 KB)
+- [Core / Infrastructure / Servers (part 2 of 2)](https://coolify.io/docs/llms-full/core/infrastructure/servers-2.txt): Provision Cloud Server, Remove Server, Server Security, Server Patching, Server Transfer (Beta), Web Terminal (6 pages, 64 KB)
+- [Core / Networking](https://coolify.io/docs/llms-full/core/networking.txt): DNS, Domains, Destinations (6 pages, 39 KB)
+- [Core / Networking / Proxy (part 1 of 2)](https://coolify.io/docs/llms-full/core/networking/proxy-1.txt): Maintenance and Error Pages, Proxy Overview, Caddy, Custom (8 pages, 78 KB)
 - [Core / Networking / Proxy (part 2 of 2)](https://coolify.io/docs/llms-full/core/networking/proxy-2.txt): Traefik (13 pages, 68 KB)
-- [Core / Security (part 1 of 2)](https://coolify.io/docs/llms-full/core/security-1.txt): Image Scanning, Authentication (17 pages, 74 KB)
-- [Core / Security (part 2 of 2)](https://coolify.io/docs/llms-full/core/security-2.txt): Credentials (4 pages, 38 KB)
-- [Databases (part 1 of 2)](https://coolify.io/docs/llms-full/databases-1.txt): Databases to Redis (12 pages, 94 KB)
-- [Databases (part 2 of 2)](https://coolify.io/docs/llms-full/databases-2.txt): Restore a Database, SQLite, Database SSL, What is a database, Configuration, Operations (13 pages, 59 KB)
-- [Services (part 1 of 6)](https://coolify.io/docs/llms-full/services-1.txt): Services to Convertx (53 pages, 100 KB)
-- [Services (part 2 of 6)](https://coolify.io/docs/llms-full/services-2.txt): Convex to Heimdall (71 pages, 81 KB)
-- [Services (part 3 of 6)](https://coolify.io/docs/llms-full/services-3.txt): Hermes Agent to Neon Ws Proxy (75 pages, 100 KB)
-- [Services (part 4 of 6)](https://coolify.io/docs/llms-full/services-4.txt): Netbird-Client to SearXNG (82 pages, 100 KB)
-- [Services (part 5 of 6)](https://coolify.io/docs/llms-full/services-5.txt): SeaweedFS to Zipline (68 pages, 84 KB)
-- [Services (part 6 of 6)](https://coolify.io/docs/llms-full/services-6.txt): Configuration, Operations (12 pages, 80 KB)
+- [Core / Security (part 1 of 2)](https://coolify.io/docs/llms-full/core/security-1.txt): Image Scanning, Authentication (17 pages, 79 KB)
+- [Core / Security (part 2 of 2)](https://coolify.io/docs/llms-full/core/security-2.txt): Credentials (4 pages, 39 KB)
+- [Databases (part 1 of 2)](https://coolify.io/docs/llms-full/databases-1.txt): Databases to PostgreSQL (11 pages, 95 KB)
+- [Databases (part 2 of 2)](https://coolify.io/docs/llms-full/databases-2.txt): Redis to Operations (14 pages, 67 KB)
+- [Services (part 1 of 6)](https://coolify.io/docs/llms-full/services-1.txt): Services to ClassicPress (45 pages, 98 KB)
+- [Services (part 2 of 6)](https://coolify.io/docs/llms-full/services-2.txt): ClassroomIO to Heimdall (82 pages, 94 KB)
+- [Services (part 3 of 6)](https://coolify.io/docs/llms-full/services-3.txt): Hermes Agent to Monica (72 pages, 100 KB)
+- [Services (part 4 of 6)](https://coolify.io/docs/llms-full/services-4.txt): Moodle to Rocket.Chat (81 pages, 100 KB)
+- [Services (part 5 of 6)](https://coolify.io/docs/llms-full/services-5.txt): RustFS to Zipline (75 pages, 94 KB)
+- [Services (part 6 of 6)](https://coolify.io/docs/llms-full/services-6.txt): Configuration, Operations (12 pages, 83 KB)
+- [Troubleshoot (part 1 of 2)](https://coolify.io/docs/llms-full/troubleshoot-1.txt): Troubleshooting Overview, Applications, Dashboard, DNS & Domains, Docker, Installation (16 pages, 88 KB)
+- [Troubleshoot (part 2 of 2)](https://coolify.io/docs/llms-full/troubleshoot-2.txt): Server (5 pages, 14 KB)

@@ -1744,7 +1744,7 @@
 - [Core (part 1 of 6)](https://coolify.io/docs/llms-full/core-1.txt): Build and Deployment Model to What is Coolify (9 pages, 75 KB)
 - [Core (part 2 of 6)](https://coolify.io/docs/llms-full/core-2.txt): Automation, Backup and Recovery (14 pages, 71 KB)
 - [Core (part 3 of 6)](https://coolify.io/docs/llms-full/core-3.txt): Instance Management (7 pages, 92 KB)
-- [Core (part 4 of 6)](https://coolify.io/docs/llms-full/core-4.txt): Notifications (9 pages, 72 KB)
+- [Core (part 4 of 6)](https://coolify.io/docs/llms-full/core-4.txt): Notifications (9 pages, 74 KB)
 - [Core (part 5 of 6)](https://coolify.io/docs/llms-full/core-5.txt): Observability, Persistent storage (14 pages, 95 KB)
 - [Core (part 6 of 6)](https://coolify.io/docs/llms-full/core-6.txt): S3 Storage, Team (15 pages, 80 KB)
 - [Core / Infrastructure](https://coolify.io/docs/llms-full/core/infrastructure.txt): Scaling (4 pages, 21 KB)
